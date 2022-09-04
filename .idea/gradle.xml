@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/category" />
             <option value="$PROJECT_DIR$/shared_feature" />
+            <option value="$PROJECT_DIR$/shared_feature/base" />
             <option value="$PROJECT_DIR$/shared_feature/coroutine" />
             <option value="$PROJECT_DIR$/shared_feature/network" />
           </set>

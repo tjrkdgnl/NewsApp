@@ -32,10 +32,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation project(':features:category')
+    implementation project(':shared_feature:base')
 
     implementation deps.timber.core
 

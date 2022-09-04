@@ -1,0 +1,36 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.hugh.category" >
+4
+5    <uses-sdk
+6        android:minSdkVersion="21"
+6-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml
+7        android:targetSdkVersion="31" />
+7-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml
+8
+9    <application android:theme="@style/Theme.WantedPreOnboarding" >
+9-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:5:5-18:19
+9-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:5:18-66
+10        <activity
+10-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:7:9-17:20
+11            android:name="com.hugh.category.presentation.MainActivity"
+11-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:8:13-54
+12            android:exported="true" >
+12-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:9:13-36
+13            <intent-filter>
+13-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:10:13-15:29
+14                <action android:name="android.intent.action.MAIN" />
+14-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:11:17-69
+14-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:11:25-66
+15
+16                <category android:name="android.intent.category.DEFAULT" />
+16-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:13:17-76
+16-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:13:27-73
+17                <category android:name="android.intent.category.LAUNCHER" />
+17-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:14:17-77
+17-->C:\Users\skh08\AndroidStudioProjects\wanted_preonboarding_android\category\src\main\AndroidManifest.xml:14:27-74
+18            </intent-filter>
+19        </activity>
+20    </application>
+21
+22</manifest>
