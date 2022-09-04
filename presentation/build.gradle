@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion = versions.compileSdk
+
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation (androidx)
+    implementation (material)
+    testImplementation (junit4)
+    androidTestImplementation (junit4Test)
+
+    implementation deps.coroutine.core
+    implementation(ktxVersions)
+
+    implementation project(':domain')
+
+    implementation deps.timber.core
+
+    implementation deps.hilt.core
+    kapt deps.hilt.compiler
+}

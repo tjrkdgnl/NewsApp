@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlinx-serialization'
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "API_KEY", properties['api_key']
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation(retrofit)
+
+    implementation deps.hilt.core
+    kapt deps.hilt.compiler
+
+    implementation deps.jsonSerialization.core
+}

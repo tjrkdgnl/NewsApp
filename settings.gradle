@@ -1,0 +1,21 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "wantedPreOnboarding"
+include ':app'
+include ':shared_feature'
+include ':shared_feature:network'
+include ':shared_feature:coroutine'
+include ':features'
+include ':features:category'
