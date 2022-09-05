@@ -25,7 +25,8 @@ ext {
             "ktxVersion"                        : "2.4.0",
             "activityKtx"                       : "1.5.1",
             "fragmentKtx"                       : "1.5.2",
-            "timber"                            : "5.0.1"
+            "timber"                            : "5.0.1",
+            "navigation"                        : "2.5.1"
     ]
 
     deps = [
@@ -68,6 +69,11 @@ ext {
             ],
             "jsonSerialization"                     : [
                     "core"                          : "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.jsonSerialization}"
+            ],
+            "navigation"                            : [
+                    "fragment"                      : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                    "ui"                            : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                    "runtime"                       : "androidx.navigation:navigation-runtime:${versions.navigation}"
             ]
     ]
 
@@ -103,6 +109,12 @@ ext {
             deps.retrofit.loggingInterceptor,
             deps.retrofit.coroutinesConverter,
             deps.retrofit.serialization,
+    ]
+
+    framentNavigation =[
+            deps.navigation.fragment,
+            deps.navigation.ui,
+            deps.navigation.runtime
     ]
 
 }
