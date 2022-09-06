@@ -30,6 +30,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
         super.onViewCreated(view, savedInstanceState)
 
         binding = DataBindingUtil.bind(view)!!
+        binding.lifecycleOwner = viewLifecycleOwner
 
         binding.recycler.apply {
             adapter = CategoryAdapter(moveDetailCallback).apply {

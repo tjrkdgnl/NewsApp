@@ -29,8 +29,16 @@ class CategoryDetailFragment : Fragment(R.layout.fragment_detail) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding = DataBindingUtil.bind(view)!!
+        binding.viewModel = categoryDetailViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        categoryDetailViewModel.retryState.observe(viewLifecycleOwner) { retry ->
+            if (retry) {
+                categoryAdapter.retry()
+                categoryDetailViewModel.retryInit()
+            }
+        }
 
         binding.pagingRecyclerView.apply {
             adapter = categoryAdapter
@@ -41,6 +49,7 @@ class CategoryDetailFragment : Fragment(R.layout.fragment_detail) {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 categoryAdapter.loadStateFlow.collect { loadState ->
                     binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
+                    binding.errorLayout.isVisible = loadState.refresh is LoadState.Error
                 }
             }
         }
