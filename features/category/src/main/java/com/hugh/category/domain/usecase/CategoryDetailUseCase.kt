@@ -4,12 +4,10 @@ import com.hugh.category.domain.state.ArticleState
 import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 
-interface ArticleUseCase {
+interface CategoryDetailUseCase {
 
-    suspend fun getEveryThing(
-        type: String,
-        from: String? = null,
-        to: String? = null,
-        sortType: String = "popularity"
+    suspend fun getCategoryArticles(
+        categoryType: CategoryType,
+        countryType: CountryType = CountryType.KR
     ): ArticleState
 }

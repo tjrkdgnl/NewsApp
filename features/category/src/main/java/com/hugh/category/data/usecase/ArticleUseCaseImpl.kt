@@ -11,13 +11,6 @@ class ArticleUseCaseImpl @Inject constructor(
     private val articleRepository: ArticleRepository
 ) : ArticleUseCase {
 
-    override suspend fun getTopHeadlines(
-        categoryType: CategoryType,
-        countryType: CountryType
-    ): ArticleState {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun getEveryThing(
         type: String,
         from: String?,
