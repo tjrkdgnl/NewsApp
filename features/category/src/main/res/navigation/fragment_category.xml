@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/fragment_navigation"
+    android:id="@+id/category_navigation"
     app:startDestination="@id/category"
     tools:ignore="MissingDefaultResource">
 
@@ -23,6 +23,7 @@
 
     <fragment
         android:id="@+id/categoryDetail"
+        android:label="@string/detail"
         android:name="com.hugh.category.presentation.categoryDetail.CategoryDetailFragment"
         tools:layout="@layout/fragment_detail">
 
