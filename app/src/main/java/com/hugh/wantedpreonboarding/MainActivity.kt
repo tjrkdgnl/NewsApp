@@ -1,17 +1,19 @@
 package com.hugh.wantedpreonboarding
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.core.content.ContextCompat
 import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationBarView
 import com.hugh.base.BaseActivity
 import com.hugh.wantedpreonboarding.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), NavigationBarView.OnItemSelectedListener {
 
     private lateinit var navHost: NavHost
 
@@ -24,6 +26,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     private fun setUpBottomNavigationView() {
         navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         binding.bottomNavi.setupWithNavController(navHost.navController)
+        binding.bottomNavi.setOnItemSelectedListener(this)
     }
 
     private fun initToolbar() {
@@ -34,5 +37,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun onSupportNavigateUp(): Boolean {
         return navHost.navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        return true
     }
 }
