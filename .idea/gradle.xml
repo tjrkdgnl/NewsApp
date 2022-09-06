@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/shared_feature" />
             <option value="$PROJECT_DIR$/shared_feature/base" />
             <option value="$PROJECT_DIR$/shared_feature/coroutine" />
+            <option value="$PROJECT_DIR$/shared_feature/dateformatter" />
             <option value="$PROJECT_DIR$/shared_feature/network" />
           </set>
         </option>

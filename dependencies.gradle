@@ -3,7 +3,7 @@ ext {
     versions = [
             "compileSdk"                        : 32,
             "targetSdk"                         : 31,
-            "minSdk"                            : 21,
+            "minSdk"                            : 26,
             "versionName"                       : "1.0.0",
             "versionCode"                       : 1,
             "retrofit"                          : "2.9.0",
@@ -27,7 +27,8 @@ ext {
             "fragmentKtx"                       : "1.5.2",
             "timber"                            : "5.0.1",
             "navigation"                        : "2.5.1",
-            "paging3"                           : "3.1.1"
+            "paging3"                           : "3.1.1",
+            "glide"                             : "4.13.2"
     ]
 
     deps = [
@@ -78,6 +79,10 @@ ext {
             ],
             "paging3"                               : [
                     "core"                          : "androidx.paging:paging-runtime:${versions.paging3}"
+            ],
+            "glide"                                 : [
+                    "core"                          : "com.github.bumptech.glide:glide:${versions.glide}",
+                    "compiler"                      : "com.github.bumptech.glide:compiler:${versions.glide}"
             ]
     ]
 

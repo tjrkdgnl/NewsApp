@@ -7,11 +7,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import com.hugh.base.BaseFragment
 import com.hugh.category.R
 import com.hugh.category.databinding.FragmentDetailBinding
+import com.hugh.category.presentation.category.adapter.GridSpacingItemDecoration
 import com.hugh.category.presentation.categoryDetail.adapter.CategoryDetailPagingAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -29,6 +29,7 @@ class CategoryDetailFragment : BaseFragment<FragmentDetailBinding>(R.layout.frag
 
         binding.pagingRecyclerView.apply {
             adapter = categoryAdapter
+            addItemDecoration(GridSpacingItemDecoration(1,30))
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
