@@ -19,7 +19,7 @@ open class BaseFragment<T : ViewDataBinding>(@LayoutRes layout: Int) : Fragment(
         super.onViewCreated(view, savedInstanceState)
 
         bindingObj = DataBindingUtil.bind(view)
-        bindingObj?.lifecycleOwner = this
+        bindingObj?.lifecycleOwner = viewLifecycleOwner
     }
 
     override fun onDestroyView() {

@@ -9,7 +9,9 @@ interface CategoryApiService {
     @GET("top-headlines/")
     suspend fun getTopHeadlines(
         @Query("country") country: String?,
-        @Query("category") category: String?
+        @Query("category") category: String?,
+        @Query("page") page: Int,
+        @Query("pageSize") pageSize: Int
     ) : Articles
 
     @GET("everything/")

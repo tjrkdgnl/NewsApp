@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/categoryDetail"
-        android:name="com.hugh.category.presentation.categoryDetail.CategoryDetail"
+        android:name="com.hugh.category.presentation.categoryDetail.CategoryDetailFragment"
         tools:layout="@layout/fragment_detail">
 
     </fragment>

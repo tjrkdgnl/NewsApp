@@ -10,16 +10,19 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor(
     private val apiService: CategoryApiService
 ) {
-
-    suspend fun getTopHeadLines(
+    suspend fun getCategoryDetailList(
         categoryType: CategoryType,
-        countryType: CountryType
+        countryType: CountryType,
+        page: Int,
+        pageSize: Int
     ): ArticleState {
         return runCatching {
             ArticleState.Success(
                 articlesEntity = apiService.getTopHeadlines(
                     country = countryType.toString(),
-                    category = categoryType.toString()
+                    category = categoryType.toString(),
+                    page = page,
+                    pageSize = pageSize
                 ).toEntity()
             )
         }.getOrElse {

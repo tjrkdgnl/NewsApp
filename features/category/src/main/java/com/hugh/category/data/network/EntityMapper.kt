@@ -14,11 +14,11 @@ fun Articles.toEntity(): ArticlesEntity {
 fun Article.toEntity(): ArticleEntity {
     return ArticleEntity(
         author = this.author ?: "",
-        content = this.content,
-        description = this.description,
-        publishedAt = this.publishedAt,
-        title = this.title,
-        url = this.url,
-        urlToImage = this.urlToImage
+        content = this.content ?: "",
+        description = this.description ?: "",
+        publishedAt = this.publishedAt ?: "",
+        title = this.title ?: "",
+        url = this.url ?: "",
+        urlToImage = this.urlToImage ?: ""
     )
 }
