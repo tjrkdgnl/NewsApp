@@ -26,7 +26,8 @@ ext {
             "activityKtx"                       : "1.5.1",
             "fragmentKtx"                       : "1.5.2",
             "timber"                            : "5.0.1",
-            "navigation"                        : "2.5.1"
+            "navigation"                        : "2.5.1",
+            "paging3"                           : "3.1.1"
     ]
 
     deps = [
@@ -74,6 +75,9 @@ ext {
                     "fragment"                      : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
                     "ui"                            : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
                     "runtime"                       : "androidx.navigation:navigation-runtime:${versions.navigation}"
+            ],
+            "paging3"                               : [
+                    "core"                          : "androidx.paging:paging-runtime:${versions.paging3}"
             ]
     ]
 

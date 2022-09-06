@@ -35,4 +35,16 @@ class ArticleRepositoryImpl @Inject constructor(
             remoteDataSource.getEverything(type, from, to, page, pageSize, sortType)
         }
     }
+
+    override fun getCategoryTypeList(): List<CategoryType> {
+        return listOf(
+            CategoryType.BUSINESS,
+            CategoryType.ENTERTAINMENT,
+            CategoryType.GENERAL,
+            CategoryType.SCIENCE,
+            CategoryType.HEALTH,
+            CategoryType.SPORTS,
+            CategoryType.TECHNOLOGY
+        )
+    }
 }

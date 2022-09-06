@@ -7,7 +7,7 @@ import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
  */
 @AggregatedDeps(
     components = "dagger.hilt.components.SingletonComponent",
-    modules = "com.hugh.category.data.di.NetworkModule"
+    modules = "com.hugh.category.di.NetworkModule"
 )
 public class _com_hugh_category_data_di_NetworkModule {
 }

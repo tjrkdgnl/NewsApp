@@ -1,4 +1,4 @@
-package com.hugh.category.data.di
+package com.hugh.category.di
 
 import com.hugh.category.data.network.CategoryApiService
 import dagger.Module

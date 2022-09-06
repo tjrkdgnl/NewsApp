@@ -20,4 +20,6 @@ interface ArticleRepository {
         pageSize: Int = 30,
         sortType: String
     ): ArticleState
+
+    fun getCategoryTypeList(): List<CategoryType>
 }

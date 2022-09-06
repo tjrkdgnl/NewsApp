@@ -59,4 +59,6 @@ dependencies {
     implementation deps.timber.core
 
     implementation deps.jsonSerialization.core
+
+    implementation deps.paging3.core
 }

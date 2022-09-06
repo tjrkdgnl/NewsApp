@@ -7,7 +7,7 @@ import dagger.hilt.processor.internal.aggregateddeps.AggregatedDeps;
  */
 @AggregatedDeps(
     components = "dagger.hilt.android.components.ViewModelComponent",
-    modules = "com.hugh.category.data.di.UseCaseModule"
+    modules = "com.hugh.category.di.UseCaseModule"
 )
 public class _com_hugh_category_data_di_UseCaseModule {
 }

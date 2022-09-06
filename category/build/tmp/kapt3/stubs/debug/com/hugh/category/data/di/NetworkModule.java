@@ -1,4 +1,4 @@
-package com.hugh.category.data.di;
+package com.hugh.category.di;
 
 import java.lang.System;
 
@@ -7,7 +7,7 @@ import java.lang.System;
 @dagger.Module
 public final class NetworkModule {
     @org.jetbrains.annotations.NotNull
-    public static final com.hugh.category.data.di.NetworkModule INSTANCE = null;
+    public static final com.hugh.category.di.NetworkModule INSTANCE = null;
     
     private NetworkModule() {
         super();
