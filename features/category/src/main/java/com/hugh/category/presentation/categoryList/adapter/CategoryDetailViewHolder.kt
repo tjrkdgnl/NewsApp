@@ -1,4 +1,4 @@
-package com.hugh.category.presentation.categoryDetail.adapter
+package com.hugh.category.presentation.categoryList.adapter
 
 import android.view.ViewGroup
 import com.hugh.base.BaseViewHolder

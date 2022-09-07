@@ -1,4 +1,4 @@
-package com.hugh.category.presentation.categoryDetail
+package com.hugh.category.presentation.categoryList
 
 import androidx.lifecycle.*
 import androidx.paging.cachedIn
@@ -8,7 +8,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CategoryDetailViewModel @Inject constructor(
+class CategoryListlViewModel @Inject constructor(
     private val categoryDetailUseCase: CategoryDetailUseCase,
     private val bundle: SavedStateHandle
 ) : ViewModel() {
