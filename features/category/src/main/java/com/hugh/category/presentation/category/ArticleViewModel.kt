@@ -7,7 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ArticleViewModel @Inject constructor(
+internal class ArticleViewModel @Inject constructor(
     private val categoryUseCase: CategoryUseCase
 ) : ViewModel() {
 

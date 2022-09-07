@@ -8,7 +8,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class CategoryDetailViewModel @Inject constructor(
+internal class CategoryDetailViewModel @Inject constructor(
     private val articleUseCase: ArticleUseCase,
     private val bundle: SavedStateHandle
 ) : ViewModel() {

@@ -5,7 +5,7 @@ import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.usecase.CategoryUseCase
 import javax.inject.Inject
 
-class CategoryUseCaseImpl @Inject constructor(
+internal class CategoryUseCaseImpl @Inject constructor(
     private val categoryRepository: CategoryRepository
 ) : CategoryUseCase {
 

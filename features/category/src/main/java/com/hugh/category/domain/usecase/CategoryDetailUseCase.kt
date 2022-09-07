@@ -6,7 +6,7 @@ import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 import kotlinx.coroutines.flow.Flow
 
-interface CategoryDetailUseCase {
+internal interface CategoryDetailUseCase {
 
     fun getCategoryDetailArticles(
         categoryType: CategoryType,

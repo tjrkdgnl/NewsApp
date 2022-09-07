@@ -5,7 +5,7 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.hugh.category.domain.entity.ArticleEntity
 
-class CategoryDetailPagingAdapter(
+internal class CategoryDetailPagingAdapter(
     private val moveArticleDetailCallback: (ArticleEntity) -> Unit
 ) : PagingDataAdapter<ArticleEntity, CategoryDetailViewHolder>(
     object : DiffUtil.ItemCallback<ArticleEntity>() {

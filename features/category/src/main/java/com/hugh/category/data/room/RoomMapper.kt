@@ -4,7 +4,7 @@ import com.hugh.category.data.room.model.RoomArticle
 import com.hugh.category.domain.entity.ArticleEntity
 
 
-fun ArticleEntity.toRoom(): RoomArticle {
+internal fun ArticleEntity.toRoom(): RoomArticle {
     return RoomArticle(
         id = null,
         uid = this.uid,
@@ -16,7 +16,7 @@ fun ArticleEntity.toRoom(): RoomArticle {
     )
 }
 
-fun RoomArticle.toEntity(): ArticleEntity {
+internal fun RoomArticle.toEntity(): ArticleEntity {
     return ArticleEntity.EMPTY.copy(
         uid = this.uid,
         author = this.author,

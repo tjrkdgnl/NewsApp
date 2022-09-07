@@ -8,7 +8,7 @@ import com.hugh.category.data.room.model.RoomArticle
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface ArticleDao {
+internal interface ArticleDao {
 
     @Query("SELECT * FROM Article")
     fun getArticleFlow(): Flow<RoomArticle>

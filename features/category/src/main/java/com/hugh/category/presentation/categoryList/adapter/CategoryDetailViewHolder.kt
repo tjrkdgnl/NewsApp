@@ -6,7 +6,7 @@ import com.hugh.category.R
 import com.hugh.category.databinding.ViewholderCategoryListBinding
 import com.hugh.category.domain.entity.ArticleEntity
 
-class CategoryDetailViewHolder(
+internal class CategoryDetailViewHolder(
     parent: ViewGroup,
     private val moveArticleDetailCallback: (ArticleEntity) -> Unit
 ) : BaseViewHolder<ViewholderCategoryListBinding, ArticleEntity>(parent, R.layout.viewholder_category_list) {

@@ -7,7 +7,7 @@ import com.hugh.category.domain.usecase.ArticleUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class ArticleUseCaseImpl @Inject constructor(
+internal class ArticleUseCaseImpl @Inject constructor(
     private val articleRepository: ArticleRepository
 ) : ArticleUseCase {
 

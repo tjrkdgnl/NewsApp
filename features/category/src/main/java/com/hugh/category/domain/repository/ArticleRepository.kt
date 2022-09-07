@@ -4,7 +4,7 @@ import com.hugh.category.domain.entity.ArticleEntity
 import com.hugh.category.domain.state.ArticleState
 import kotlinx.coroutines.flow.Flow
 
-interface ArticleRepository {
+internal interface ArticleRepository {
 
     suspend fun getEverything(
         type: String,

@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
-class LocalDataSource @Inject constructor(
+internal class LocalDataSource @Inject constructor(
     private val articleDataBase: ArticleDataBase
 ) {
 

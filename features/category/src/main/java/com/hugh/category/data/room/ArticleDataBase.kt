@@ -6,7 +6,7 @@ import com.hugh.category.data.room.ArticleDataBase.Companion.ROOM_VERSION
 import com.hugh.category.data.room.model.RoomArticle
 
 @Database(entities = [RoomArticle::class], version = ROOM_VERSION, exportSchema = false)
-abstract class ArticleDataBase : RoomDatabase() {
+internal abstract class ArticleDataBase : RoomDatabase() {
 
     abstract fun articleDao(): ArticleDao
 

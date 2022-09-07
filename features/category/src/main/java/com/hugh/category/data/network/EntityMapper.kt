@@ -7,7 +7,7 @@ import com.hugh.category.domain.entity.ArticlesEntity
 import com.hugh.dateformatter.DateFormatter
 import java.util.*
 
-fun Articles.toEntity(): ArticlesEntity {
+internal fun Articles.toEntity(): ArticlesEntity {
     return ArticlesEntity(
         articles = this.articles
             .filterNot { it.urlToImage == null || it.description == null }
@@ -15,7 +15,7 @@ fun Articles.toEntity(): ArticlesEntity {
     )
 }
 
-fun Article.toEntity(): ArticleEntity {
+internal fun Article.toEntity(): ArticleEntity {
     return ArticleEntity(
         uid = UUID.randomUUID().toString(),
         author = this.author ?: "",

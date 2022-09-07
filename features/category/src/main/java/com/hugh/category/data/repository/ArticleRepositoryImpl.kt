@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
-class ArticleRepositoryImpl @Inject constructor(
+internal class ArticleRepositoryImpl @Inject constructor(
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher,
     private val remoteDataSource: RemoteDataSource,
     private val localDataSource: LocalDataSource
