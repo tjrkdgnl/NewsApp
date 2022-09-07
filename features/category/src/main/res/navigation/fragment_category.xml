@@ -25,7 +25,7 @@
         android:id="@+id/categoryDetail"
         android:label="@string/detail"
         android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
-        tools:layout="@layout/fragment_detail">
+        tools:layout="@layout/fragment_list">
 
     </fragment>
 

@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CategoryListFragment : Fragment(R.layout.fragment_detail) {
+class CategoryListFragment : Fragment(R.layout.fragment_list) {
 
     private lateinit var binding: FragmentDetailBinding
     private val categoryListlViewModel: CategoryListlViewModel by viewModels()

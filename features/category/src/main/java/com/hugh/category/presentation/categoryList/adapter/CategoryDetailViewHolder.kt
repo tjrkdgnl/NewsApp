@@ -8,7 +8,7 @@ import com.hugh.category.domain.entity.ArticleEntity
 
 class CategoryDetailViewHolder(parent: ViewGroup) :
     BaseViewHolder<ViewholderCategoryDetailBinding, ArticleEntity>(
-        parent, R.layout.viewholder_category_detail
+        parent, R.layout.viewholder_category_list
     ) {
 
     override fun bind(item: ArticleEntity) {
