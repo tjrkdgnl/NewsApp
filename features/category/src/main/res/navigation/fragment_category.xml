@@ -11,22 +11,34 @@
         android:name="com.hugh.category.presentation.category.CategoryFragment"
         android:label="@string/category"
         tools:layout="@layout/fragment_category">
+
         <action
-            android:id="@+id/action_category_to_categoryDetail"
-            app:destination="@id/categoryDetail">
+            android:id="@+id/action_category_to_categoryList"
+            app:destination="@id/categoryList">
             <argument
                 android:name="categoryType"
                 app:argType="com.hugh.category.domain.state.CategoryType" />
         </action>
+    </fragment>
 
+    <fragment
+        android:id="@+id/categoryList"
+        android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
+        android:label="@string/relative_list"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_categoryList_to_categoryDetail"
+            app:destination="@id/categoryDetail">
+            <argument
+                android:name="article"
+                app:argType="com.hugh.category.domain.entity.ArticleEntity" />
+        </action>
     </fragment>
 
     <fragment
         android:id="@+id/categoryDetail"
+        android:name="com.hugh.category.presentation.categoryDetail.CategoryDetail"
         android:label="@string/detail"
-        android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
-        tools:layout="@layout/fragment_list">
-
-    </fragment>
+        tools:layout="@layout/fragment_detail" />
 
 </navigation>

@@ -10,6 +10,6 @@ interface CategoryDetailUseCase {
 
     fun getCategoryDetailArticles(
         categoryType: CategoryType,
-        countryType: CountryType = CountryType.KR
+        countryType: CountryType = CountryType.US
     ): Flow<PagingData<ArticleEntity>>
 }

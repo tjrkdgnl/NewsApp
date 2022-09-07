@@ -21,7 +21,6 @@ fun Article.toEntity(): ArticleEntity {
         description = this.description ?: "",
         publishedAt = if(this.publishedAt !=null) DateFormatter.getDifferentDate(this.publishedAt) else "",
         title = this.title ?: "",
-        url = this.url ?: "",
         urlToImage = this.urlToImage ?: ""
     )
 }

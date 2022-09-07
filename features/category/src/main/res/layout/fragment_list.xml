@@ -5,7 +5,7 @@
 
         <variable
             name="viewModel"
-            type="com.hugh.category.presentation.categoryList.CategoryListlViewModel" />
+            type="com.hugh.category.presentation.categoryList.CategoryListViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
