@@ -1,8 +1,10 @@
 package com.hugh.category.data.usecase
 
+import com.hugh.category.domain.entity.ArticleEntity
 import com.hugh.category.domain.repository.ArticleRepository
 import com.hugh.category.domain.state.ArticleState
 import com.hugh.category.domain.usecase.ArticleUseCase
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class ArticleUseCaseImpl @Inject constructor(
@@ -21,5 +23,17 @@ class ArticleUseCaseImpl @Inject constructor(
             to = to,
             sortType = sortType
         )
+    }
+
+    override suspend fun insertArticle(article: ArticleEntity) {
+        articleRepository.insertArticle(article)
+    }
+
+    override suspend fun deleteArticle(id: String) {
+        articleRepository.deleteArticle(id)
+    }
+
+    override suspend fun getArticleFlow(): Flow<ArticleEntity> {
+        return articleRepository.getArticleFlow()
     }
 }

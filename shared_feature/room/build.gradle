@@ -3,8 +3,6 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
-    id 'kotlinx-serialization'
-    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -38,33 +36,8 @@ android {
 }
 
 dependencies {
-    implementation project(':shared_feature:base')
-    implementation project(':shared_feature:network')
-    implementation project(':shared_feature:coroutine')
-    implementation project(':shared_feature:dateformatter')
-
-    implementation(androidx)
-    implementation(material)
-    implementation(junit4)
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
-    testImplementation(junit4Test)
-    implementation(ktxVersions)
-    implementation(retrofit)
-
-    implementation deps.coroutine.core
-
     implementation deps.hilt.core
     kapt deps.hilt.compiler
-
-    implementation deps.timber.core
-
-    implementation deps.jsonSerialization.core
-
-    implementation deps.paging3.core
-
-    implementation deps.glide.core
-    kapt deps.glide.compiler
 
     implementation deps.room.core
     implementation deps.room.ktx

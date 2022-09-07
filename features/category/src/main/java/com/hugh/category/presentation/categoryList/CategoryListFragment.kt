@@ -52,7 +52,8 @@ class CategoryListFragment : Fragment(R.layout.fragment_list) {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 categoryAdapter.loadStateFlow.collect { loadState ->
                     binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
-                    binding.errorLayout.isVisible = loadState.refresh is LoadState.Error
+                    binding.errorLayout.isVisible = loadState.refresh is LoadState.Error ||
+                            loadState.refresh is LoadState.NotLoading && categoryAdapter.itemCount == 0
                 }
             }
         }

@@ -28,7 +28,8 @@ ext {
             "timber"                            : "5.0.1",
             "navigation"                        : "2.5.1",
             "paging3"                           : "3.1.1",
-            "glide"                             : "4.13.2"
+            "glide"                             : "4.13.2",
+            "room"                              : "2.4.3"
     ]
 
     deps = [
@@ -83,6 +84,11 @@ ext {
             "glide"                                 : [
                     "core"                          : "com.github.bumptech.glide:glide:${versions.glide}",
                     "compiler"                      : "com.github.bumptech.glide:compiler:${versions.glide}"
+            ],
+            "room"                                  : [
+                    "core"                          : "androidx.room:room-runtime:${versions.room}",
+                    "compiler"                      : "androidx.room:room-compiler:${versions.room}",
+                    "ktx"                           : "androidx.room:room-ktx:${versions.room}"
             ]
     ]
 

@@ -45,19 +45,31 @@
                 android:id="@+id/bookmark"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:background="@drawable/bookmark_selector" />
+                android:clickable="true"
+                android:focusableInTouchMode="true"
+                android:onClick="@{() -> viewModel.toggleBookmark()}"
+                android:background="@drawable/bookmark_selector"
+                app:layout_constraintBottom_toBottomOf="@id/title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/title"
+                />
         </FrameLayout>
 
         <TextView
             android:id="@+id/autor"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:text="@{viewModel.article.author}"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintEnd_toStartOf="@id/date"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintBottom_toTopOf="@id/articleImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/title"
@@ -75,13 +87,14 @@
             app:layout_constraintBottom_toBottomOf="@id/autor"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/autor"
-            tools:text="기자이름" />
+            tools:text="1시간 전" />
 
         <ImageView
             android:id="@+id/articleImage"
             articleImage="@{viewModel.article.urlToImage}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
             android:layout_marginTop="10dp"
             android:paddingHorizontal="10dp"
             app:layout_constraintEnd_toEndOf="parent"
