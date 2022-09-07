@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <item
+        android:id="@+id/headLine"
+        android:icon="@drawable/headline_selector"
+        android:title="@string/head_line" />
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/category_selector"
+        android:title="@string/category" />
+
+    <item
+        android:id="@+id/bookmark"
+        android:icon="@drawable/bookmark_selector"
+        android:title="@string/bookmark" />
+</menu>

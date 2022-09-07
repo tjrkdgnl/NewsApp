@@ -1,2 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="categoryTitle">원하는 카테고리를 선택해주세요</string>
+    <string name="head_line">주요기사</string>
+    <string name="category">카테고리</string>
+    <string name="bookmark">북마크</string>
+    <string name="detail">관련기사</string>
+    <string name="fail_load">관련된 기사를 가져오는데 실패했어요.</string>
+    <string name="retry">다시 시도</string>
+</resources>

@@ -1,7 +1,7 @@
 package com.hugh.category.data.repository
 
-import com.hugh.category.domain.state.ArticleState
 import com.hugh.category.domain.repository.ArticleRepository
+import com.hugh.category.domain.state.ArticleState
 import com.hugh.coroutine.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext

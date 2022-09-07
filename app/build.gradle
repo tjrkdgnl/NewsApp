@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -32,15 +33,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation project(':features:category')
+    implementation project(':shared_feature:base')
 
     implementation deps.timber.core
 
     implementation(material)
+    implementation(framentNavigation)
 
     implementation deps.hilt.core
     kapt deps.hilt.compiler
+
 }
