@@ -5,7 +5,6 @@ import com.hugh.category.domain.repository.ArticleRepository
 import com.hugh.category.domain.state.ArticleState
 import com.hugh.coroutine.IoDispatcher
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
@@ -34,9 +33,5 @@ internal class ArticleRepositoryImpl @Inject constructor(
 
     override suspend fun deleteArticle(uid: String) {
         localDataSource.deleteArticle(uid)
-    }
-
-    override fun getArticleFlow(): Flow<ArticleEntity> {
-        return localDataSource.getArticleFlow()
     }
 }

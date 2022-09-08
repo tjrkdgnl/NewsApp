@@ -1,8 +1,7 @@
 package com.hugh.category.data.room
 
-import com.hugh.category.data.room.model.RoomArticle
 import com.hugh.category.domain.entity.ArticleEntity
-
+import com.hugh.room.model.RoomArticle
 
 internal fun ArticleEntity.toRoom(): RoomArticle {
     return RoomArticle(

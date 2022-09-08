@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
@@ -37,9 +38,13 @@ android {
 
 dependencies {
     implementation project(':shared_feature:coroutine')
+    implementation project(':shared_feature:room')
 
     implementation(androidx)
+    implementation(material)
     implementation(junit4)
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.5.1'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.5.1'
     testImplementation(junit4Test)
     implementation(ktxVersions)
 
@@ -47,6 +52,9 @@ dependencies {
 
     implementation deps.hilt.core
     kapt deps.hilt.compiler
+
+    implementation deps.glide.core
+    kapt deps.glide.compiler
 
     implementation deps.room.core
     implementation deps.room.ktx

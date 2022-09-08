@@ -13,12 +13,14 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/features" />
+            <option value="$PROJECT_DIR$/features/bookmark" />
             <option value="$PROJECT_DIR$/features/category" />
             <option value="$PROJECT_DIR$/shared_feature" />
             <option value="$PROJECT_DIR$/shared_feature/base" />
             <option value="$PROJECT_DIR$/shared_feature/coroutine" />
             <option value="$PROJECT_DIR$/shared_feature/dateformatter" />
             <option value="$PROJECT_DIR$/shared_feature/network" />
+            <option value="$PROJECT_DIR$/shared_feature/room" />
           </set>
         </option>
       </GradleProjectSettings>

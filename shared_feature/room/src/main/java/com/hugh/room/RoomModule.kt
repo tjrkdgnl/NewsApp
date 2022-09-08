@@ -1,6 +1,9 @@
 package com.hugh.room
 
+import android.content.Context
 import androidx.room.Room
+import androidx.room.migration.Migration
+import androidx.sqlite.db.SupportSQLiteDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,11 +18,17 @@ object RoomModule {
     @Provides
     @Singleton
     fun provideRoom(
-        @ApplicationContext context: ApplicationContext
-    ): Room {
+        @ApplicationContext context: Context
+    ): ArticleDataBase {
         return Room.databaseBuilder(
-            context = context,
-            klass =
-        )
+            context,
+            ArticleDataBase::class.java,
+            "articleRoom"
+        ).addMigrations(object :
+            Migration(ArticleDataBase.ROOM_VERSION - 1, ArticleDataBase.ROOM_VERSION) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL("ALTER TABLE Article ADD COLUMN uid TEXT NOT NULL DEFAULT '-1'")
+            }
+        }).build()
     }
 }

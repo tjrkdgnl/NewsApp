@@ -4,7 +4,6 @@ import com.hugh.category.domain.entity.ArticleEntity
 import com.hugh.category.domain.repository.ArticleRepository
 import com.hugh.category.domain.state.ArticleState
 import com.hugh.category.domain.usecase.ArticleUseCase
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 internal class ArticleUseCaseImpl @Inject constructor(
@@ -31,9 +30,5 @@ internal class ArticleUseCaseImpl @Inject constructor(
 
     override suspend fun deleteArticle(id: String) {
         articleRepository.deleteArticle(id)
-    }
-
-    override suspend fun getArticleFlow(): Flow<ArticleEntity> {
-        return articleRepository.getArticleFlow()
     }
 }

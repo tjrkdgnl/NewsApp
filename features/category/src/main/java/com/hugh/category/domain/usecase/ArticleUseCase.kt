@@ -16,6 +16,4 @@ internal interface ArticleUseCase {
     suspend fun insertArticle(article: ArticleEntity)
 
     suspend fun deleteArticle(id: String)
-
-    suspend fun getArticleFlow(): Flow<ArticleEntity>
 }
