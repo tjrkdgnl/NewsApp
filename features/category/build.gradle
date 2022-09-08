@@ -64,5 +64,9 @@ dependencies {
     implementation deps.paging3.core
 
     implementation deps.glide.core
-    annotationProcessor deps.glide.compiler
+    kapt deps.glide.compiler
+
+    implementation deps.room.core
+    implementation deps.room.ktx
+    kapt deps.room.compiler
 }

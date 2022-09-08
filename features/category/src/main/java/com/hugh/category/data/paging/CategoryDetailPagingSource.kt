@@ -9,7 +9,7 @@ import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 import com.hugh.network.Constant
 
-class CategoryDetailPagingSource(
+internal class CategoryDetailPagingSource(
     private val articleRepository: CategoryRepository,
     private val categoryType: CategoryType,
     private val countryType: CountryType

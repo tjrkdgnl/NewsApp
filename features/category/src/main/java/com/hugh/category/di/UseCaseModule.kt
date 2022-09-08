@@ -13,7 +13,7 @@ import dagger.hilt.android.components.ViewModelComponent
 
 @Module
 @InstallIn(ViewModelComponent::class)
-abstract class UseCaseModule {
+internal abstract class UseCaseModule {
 
     @Binds
     abstract fun bindArticleUseCase(

@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 
 import javax.inject.Inject
 
-class CategoryDetailUseCaseImpl @Inject constructor(
+internal class CategoryDetailUseCaseImpl @Inject constructor(
     private val categoryRepository: CategoryRepository
 ) : CategoryDetailUseCase {
 

@@ -9,9 +9,10 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.hugh.category.R
-import com.hugh.category.databinding.FragmentDetailBinding
+import com.hugh.category.databinding.FragmentListBinding
 import com.hugh.category.presentation.category.adapter.GridSpacingItemDecoration
 import com.hugh.category.presentation.categoryList.adapter.CategoryDetailPagingAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,23 +20,26 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CategoryListFragment : Fragment(R.layout.fragment_detail) {
+class CategoryListFragment : Fragment(R.layout.fragment_list) {
 
-    private lateinit var binding: FragmentDetailBinding
-    private val categoryListlViewModel: CategoryListlViewModel by viewModels()
+    private lateinit var binding: FragmentListBinding
+    private val categoryListViewModel: CategoryListViewModel by viewModels()
 
-    private val categoryAdapter = CategoryDetailPagingAdapter()
+    private val categoryAdapter = CategoryDetailPagingAdapter { article ->
+        val action = CategoryListFragmentDirections.actionCategoryListToCategoryDetail(article)
+        findNavController().navigate(action)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = DataBindingUtil.bind(view)!!
-        binding.viewModel = categoryListlViewModel
+        binding.viewModel = categoryListViewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        categoryListlViewModel.retryState.observe(viewLifecycleOwner) { retry ->
+        categoryListViewModel.retryState.observe(viewLifecycleOwner) { retry ->
             if (retry) {
                 categoryAdapter.retry()
-                categoryListlViewModel.retryInit()
+                categoryListViewModel.retryInit()
             }
         }
 
@@ -48,14 +52,15 @@ class CategoryListFragment : Fragment(R.layout.fragment_detail) {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 categoryAdapter.loadStateFlow.collect { loadState ->
                     binding.progressBar.isVisible = loadState.refresh is LoadState.Loading
-                    binding.errorLayout.isVisible = loadState.refresh is LoadState.Error
+                    binding.errorLayout.isVisible = loadState.refresh is LoadState.Error ||
+                            loadState.refresh is LoadState.NotLoading && categoryAdapter.itemCount == 0
                 }
             }
         }
 
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                categoryListlViewModel.categoryDetailFlow.collectLatest {
+                categoryListViewModel.categoryDetailFlow.collectLatest {
                     categoryAdapter.submitData(it)
                 }
             }

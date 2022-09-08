@@ -4,7 +4,7 @@ import com.hugh.category.data.model.Articles
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface CategoryApiService {
+internal interface CategoryApiService {
 
     @GET("top-headlines/")
     suspend fun getTopHeadlines(

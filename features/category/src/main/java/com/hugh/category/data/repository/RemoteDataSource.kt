@@ -7,7 +7,7 @@ import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 import javax.inject.Inject
 
-class RemoteDataSource @Inject constructor(
+internal class RemoteDataSource @Inject constructor(
     private val apiService: CategoryApiService
 ) {
     suspend fun getCategoryDetailList(

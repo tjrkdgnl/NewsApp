@@ -7,7 +7,7 @@ import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 import kotlinx.coroutines.flow.Flow
 
-interface CategoryRepository {
+internal interface CategoryRepository {
 
     fun getCategoryDetailFlow(
         category: CategoryType,
