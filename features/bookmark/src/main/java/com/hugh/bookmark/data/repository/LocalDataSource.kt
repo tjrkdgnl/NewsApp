@@ -10,7 +10,7 @@ class LocalDataSource @Inject constructor(
 ) {
 
 
-     fun getArticles(): Flow<RoomArticle> {
+     fun getArticles(): Flow<List<RoomArticle>> {
         return articleDataBase.articleDao().getArticleFlow()
     }
 }

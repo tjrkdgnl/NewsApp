@@ -11,7 +11,11 @@ class BookmarkRepositoryImpl @Inject constructor(
     private val localDataSource: LocalDataSource
 ) : BookmarkRepository {
 
-    override fun getArticles(): Flow<ArticleEntity> {
-        return localDataSource.getArticles().map { it.toEntity() }
+    override fun getArticles(): Flow<List<ArticleEntity>> {
+        return localDataSource.getArticles().map { articles ->
+            articles.map { roomArticle ->
+                roomArticle.toEntity()
+            }
+        }
     }
 }

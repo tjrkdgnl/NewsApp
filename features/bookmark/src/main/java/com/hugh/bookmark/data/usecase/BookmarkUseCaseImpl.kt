@@ -10,7 +10,7 @@ class BookmarkUseCaseImpl @Inject constructor(
     private val bookmarkRepository: BookmarkRepository
 ) : BookmarkUseCase {
 
-    override fun getArticles(): Flow<ArticleEntity> {
+    override fun getArticles(): Flow<List<ArticleEntity>> {
         return bookmarkRepository.getArticles()
     }
 }

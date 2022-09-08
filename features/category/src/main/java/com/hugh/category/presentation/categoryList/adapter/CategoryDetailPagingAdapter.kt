@@ -10,7 +10,7 @@ internal class CategoryDetailPagingAdapter(
 ) : PagingDataAdapter<ArticleEntity, CategoryDetailViewHolder>(
     object : DiffUtil.ItemCallback<ArticleEntity>() {
         override fun areItemsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
-            return oldItem.title == oldItem.title
+            return oldItem.uid == oldItem.uid
         }
 
         override fun areContentsTheSame(

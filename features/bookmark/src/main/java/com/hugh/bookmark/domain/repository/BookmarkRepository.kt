@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface BookmarkRepository {
 
-    fun getArticles(): Flow<ArticleEntity>
+    fun getArticles(): Flow<List<ArticleEntity>>
 }

@@ -4,16 +4,16 @@
     tools:ignore="MissingDefaultResource">
 
     <item
-        android:id="@+id/headLine"
+        android:id="@+id/headLine_navigation"
         android:icon="@drawable/headline_selector"
         android:title="@string/head_line" />
     <item
-        android:id="@+id/category"
+        android:id="@+id/category_navigation"
         android:icon="@drawable/category_selector"
         android:title="@string/category" />
 
     <item
-        android:id="@+id/bookmark"
+        android:id="@+id/bookmark_navigation"
         android:icon="@drawable/bookmark_selector"
         android:title="@string/bookmark" />
 </menu>

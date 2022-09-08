@@ -37,6 +37,7 @@ android {
 }
 
 dependencies {
+    implementation project(':shared_feature:base')
     implementation project(':shared_feature:coroutine')
     implementation project(':shared_feature:room')
 
