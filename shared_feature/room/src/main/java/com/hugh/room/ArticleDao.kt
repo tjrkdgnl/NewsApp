@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ArticleDao {
 
-    @Query("SELECT * FROM Article ORDER BY timestamp DESC")
+    @Query("SELECT * FROM Article ORDER BY id DESC")
     fun getArticleFlow(): Flow<List<RoomArticle>>
 
     @Query("SELECT * FROM article WHERE title = :title")
