@@ -11,6 +11,9 @@ data class RoomArticle(
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "author") val author: String,
     @ColumnInfo(name = "date") val date: String,
+    @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "content") val content: String,
-    @ColumnInfo(name = "urlToImage") val urlToImage: String
+    @ColumnInfo(name = "urlToImage") val urlToImage: String,
+    @ColumnInfo(name = "timestamp") val timestamp: Long,
+
 )

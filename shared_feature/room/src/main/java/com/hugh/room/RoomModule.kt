@@ -27,7 +27,7 @@ object RoomModule {
         ).addMigrations(object :
             Migration(ArticleDataBase.ROOM_VERSION - 1, ArticleDataBase.ROOM_VERSION) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL("ALTER TABLE Article ADD COLUMN uid TEXT NOT NULL DEFAULT '-1'")
+                database.execSQL("ALTER TABLE Article ADD COLUMN timestamp INTEGER NOT NULL DEFAULT -1")
             }
         }).build()
     }

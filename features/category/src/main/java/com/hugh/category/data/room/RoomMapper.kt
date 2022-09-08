@@ -10,18 +10,9 @@ internal fun ArticleEntity.toRoom(): RoomArticle {
         title = this.title,
         author = this.author,
         date = this.publishedAt,
+        description = this.description,
         content = this.content,
-        urlToImage = this.urlToImage
-    )
-}
-
-internal fun RoomArticle.toEntity(): ArticleEntity {
-    return ArticleEntity.EMPTY.copy(
-        uid = this.uid,
-        author = this.author,
-        content = this.content,
-        publishedAt = this.date,
-        title = this.title,
-        urlToImage = this.urlToImage
+        urlToImage = this.urlToImage,
+        timestamp = this.timestamp
     )
 }

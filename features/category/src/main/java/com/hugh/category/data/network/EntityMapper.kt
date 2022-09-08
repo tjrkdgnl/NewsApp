@@ -4,7 +4,8 @@ import com.hugh.category.data.model.Article
 import com.hugh.category.data.model.Articles
 import com.hugh.category.domain.entity.ArticleEntity
 import com.hugh.category.domain.entity.ArticlesEntity
-import com.hugh.dateformatter.DateFormatter
+import com.hugh.util.DateFormatter
+import java.time.Instant
 import java.util.*
 
 internal fun Articles.toEntity(): ArticlesEntity {
@@ -21,8 +22,9 @@ internal fun Article.toEntity(): ArticleEntity {
         author = this.author ?: "",
         content = this.content ?: "내용이 존재하지 않습니다.",
         description = this.description ?: "내용이 존재하지 않습니다.",
-        publishedAt = if(this.publishedAt !=null) DateFormatter.getDifferentDate(this.publishedAt) else "",
+        publishedAt = if (this.publishedAt != null) DateFormatter.getDifferentDate(this.publishedAt) else "",
         title = this.title ?: "",
-        urlToImage = this.urlToImage ?: ""
+        urlToImage = this.urlToImage ?: "",
+        timestamp = Instant.now().toEpochMilli()
     )
 }

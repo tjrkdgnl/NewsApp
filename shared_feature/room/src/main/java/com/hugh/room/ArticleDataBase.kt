@@ -11,6 +11,6 @@ abstract class ArticleDataBase : RoomDatabase() {
     abstract fun articleDao(): ArticleDao
 
     companion object {
-        const val ROOM_VERSION = 2
+        const val ROOM_VERSION = 4
     }
 }

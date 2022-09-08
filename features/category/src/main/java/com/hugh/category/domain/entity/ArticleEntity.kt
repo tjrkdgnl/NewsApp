@@ -1,6 +1,7 @@
 package com.hugh.category.domain.entity
 
 import java.io.Serializable
+import java.time.Instant
 
 
 data class ArticleEntity(
@@ -10,7 +11,8 @@ data class ArticleEntity(
     val description: String,
     val publishedAt: String,
     val title: String,
-    val urlToImage: String
+    val urlToImage: String,
+    val timestamp: Long
 ) : Serializable {
 
     companion object {
@@ -21,7 +23,8 @@ data class ArticleEntity(
             description = "내용이 존재하지 않습니다.",
             publishedAt = "",
             title = "",
-            urlToImage = ""
+            urlToImage = "",
+            timestamp = Instant.EPOCH.toEpochMilli()
         )
     }
 }

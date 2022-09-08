@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface ArticleDao {
 
-    @Query("SELECT * FROM Article")
+    @Query("SELECT * FROM Article ORDER BY timestamp DESC")
     fun getArticleFlow(): Flow<List<RoomArticle>>
 
     @Insert(onConflict = REPLACE)

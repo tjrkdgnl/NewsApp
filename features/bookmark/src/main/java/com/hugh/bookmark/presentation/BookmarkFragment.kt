@@ -11,9 +11,13 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.hugh.bookmark.R
 import com.hugh.bookmark.databinding.FragmentBookmarkBinding
 import com.hugh.bookmark.presentation.adapter.BookmarkAdapter
+import com.hugh.util.GridSpacingItemDecoration
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import java.time.Instant
 
+@AndroidEntryPoint
 class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
 
     private lateinit var binding: FragmentBookmarkBinding
@@ -27,14 +31,15 @@ class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
 
         binding.recyclerView.apply {
             adapter = BookmarkAdapter()
+            addItemDecoration(GridSpacingItemDecoration(1,30))
         }
-
-//        lifecycleScope.launch {
-//            repeatOnLifecycle(Lifecycle.State.STARTED) {
-//                bookmarkViewModel.articlesFlow.collectLatest {
-//                    (binding.recyclerView.adapter as BookmarkAdapter).submitList(it)
-//                }
-//            }
-//        }
+        val ints =Instant.now()
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                bookmarkViewModel.articlesFlow.collectLatest {
+                    (binding.recyclerView.adapter as BookmarkAdapter).submitList(it)
+                }
+            }
+        }
     }
 }

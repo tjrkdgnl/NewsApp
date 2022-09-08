@@ -41,7 +41,7 @@ dependencies {
     implementation project(':shared_feature:base')
     implementation project(':shared_feature:network')
     implementation project(':shared_feature:coroutine')
-    implementation project(':shared_feature:dateformatter')
+    implementation project(':shared_feature:util')
     implementation project(':shared_feature:room')
 
     implementation(androidx)
