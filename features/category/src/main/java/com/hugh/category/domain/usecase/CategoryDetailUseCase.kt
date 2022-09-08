@@ -1,15 +1,14 @@
 package com.hugh.category.domain.usecase
 
-import androidx.paging.PagingData
 import com.hugh.category.domain.entity.ArticleEntity
-import com.hugh.category.domain.state.CategoryType
-import com.hugh.category.domain.state.CountryType
-import kotlinx.coroutines.flow.Flow
+import com.hugh.category.domain.state.ArticleState
+
 
 internal interface CategoryDetailUseCase {
 
-    fun getCategoryDetailArticles(
-        categoryType: CategoryType,
-        countryType: CountryType = CountryType.US
-    ): Flow<PagingData<ArticleEntity>>
+    suspend fun insertArticle(article: ArticleEntity)
+
+    suspend fun checkArticle(uid: String): ArticleState
+
+    suspend fun deleteArticle(id: String)
 }

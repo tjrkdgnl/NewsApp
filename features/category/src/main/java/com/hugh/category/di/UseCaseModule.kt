@@ -1,10 +1,10 @@
 package com.hugh.category.di
 
-import com.hugh.category.data.usecase.ArticleUseCaseImpl
 import com.hugh.category.data.usecase.CategoryDetailUseCaseImpl
+import com.hugh.category.data.usecase.CategoryListUseCaseImpl
 import com.hugh.category.data.usecase.CategoryUseCaseImpl
-import com.hugh.category.domain.usecase.ArticleUseCase
 import com.hugh.category.domain.usecase.CategoryDetailUseCase
+import com.hugh.category.domain.usecase.CategoryListUseCase
 import com.hugh.category.domain.usecase.CategoryUseCase
 import dagger.Binds
 import dagger.Module
@@ -17,8 +17,8 @@ internal abstract class UseCaseModule {
 
     @Binds
     abstract fun bindArticleUseCase(
-        articleUseCaseImpl: ArticleUseCaseImpl
-    ): ArticleUseCase
+        articleUseCaseImpl: CategoryDetailUseCaseImpl
+    ): CategoryDetailUseCase
 
     @Binds
     abstract fun bindCategoryUseCase(
@@ -27,7 +27,7 @@ internal abstract class UseCaseModule {
 
     @Binds
     abstract fun bindCategoryDetailUseCase(
-        categoryDetailUseCaseImpl: CategoryDetailUseCaseImpl
-    ): CategoryDetailUseCase
+        categoryDetailUseCaseImpl: CategoryListUseCaseImpl
+    ): CategoryListUseCase
 
 }

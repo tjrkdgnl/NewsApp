@@ -3,13 +3,13 @@ package com.hugh.category.presentation.categoryList
 import androidx.lifecycle.*
 import androidx.paging.cachedIn
 import com.hugh.category.domain.state.CategoryType
-import com.hugh.category.domain.usecase.CategoryDetailUseCase
+import com.hugh.category.domain.usecase.CategoryListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
 internal class CategoryListViewModel @Inject constructor(
-    private val categoryDetailUseCase: CategoryDetailUseCase,
+    private val categoryListUseCase: CategoryListUseCase,
     private val bundle: SavedStateHandle
 ) : ViewModel() {
 
@@ -19,7 +19,7 @@ internal class CategoryListViewModel @Inject constructor(
     val retryState: LiveData<Boolean>
         get() = _retryState
 
-    val categoryDetailFlow = categoryDetailUseCase.getCategoryDetailArticles(
+    val categoryDetailFlow = categoryListUseCase.getCategoryDetailArticles(
         categoryType = categoryType
     ).cachedIn(viewModelScope)
 

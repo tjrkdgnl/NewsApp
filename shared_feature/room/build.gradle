@@ -36,6 +36,15 @@ android {
 }
 
 dependencies {
+    implementation project(':shared_feature:coroutine')
+
+    implementation(androidx)
+    implementation(junit4)
+    testImplementation(junit4Test)
+    implementation(ktxVersions)
+
+    implementation deps.coroutine.core
+
     implementation deps.hilt.core
     kapt deps.hilt.compiler
 
