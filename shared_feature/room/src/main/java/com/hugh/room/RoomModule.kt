@@ -27,7 +27,22 @@ object RoomModule {
         ).addMigrations(object :
             Migration(ArticleDataBase.ROOM_VERSION - 1, ArticleDataBase.ROOM_VERSION) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                database.execSQL("ALTER TABLE Article ADD COLUMN timestamp INTEGER NOT NULL DEFAULT -1")
+                database.execSQL(
+                    "CREATE TABLE Article_backup " +
+                            "(" +
+                                "author TEXT NOT NULL , " +
+                                "content TEXT NOT NULL, " +
+                                "description TEXT NOT NULL," +
+                                " date TEXT NOT NULL," +
+                                " title TEXT NOT NULL, " +
+                                "urlToImage TEXT NOT NULL, " +
+                                "timestamp INTEGER NOT NULL," +
+                                " id INTEGER PRIMARY KEY AUTOINCREMENT" +
+                            ")"
+                )
+                database.execSQL("INSERT INTO Article_backup SELECT author,content,description,date,title,urlToImage,timestamp,id FROM Article")
+                database.execSQL("DROP TABLE Article")
+                database.execSQL("ALTER TABLE Article_backup RENAME to Article")
             }
         }).build()
     }

@@ -1,23 +1,24 @@
 package com.hugh.category.data.usecase
 
-import androidx.paging.PagingData
 import com.hugh.category.domain.entity.ArticleEntity
-import com.hugh.category.domain.repository.CategoryRepository
-import com.hugh.category.domain.state.CategoryType
-import com.hugh.category.domain.state.CountryType
+import com.hugh.category.domain.repository.CategoryDetailRepository
+import com.hugh.category.domain.state.ArticleState
 import com.hugh.category.domain.usecase.CategoryDetailUseCase
-import kotlinx.coroutines.flow.Flow
-
 import javax.inject.Inject
 
 internal class CategoryDetailUseCaseImpl @Inject constructor(
-    private val categoryRepository: CategoryRepository
+    private val categoryDetailRepository: CategoryDetailRepository
 ) : CategoryDetailUseCase {
 
-    override fun getCategoryDetailArticles(
-        categoryType: CategoryType,
-        countryType: CountryType
-    ): Flow<PagingData<ArticleEntity>> {
-        return categoryRepository.getCategoryDetailFlow(categoryType, countryType)
+    override suspend fun insertArticle(article: ArticleEntity) {
+        categoryDetailRepository.insertArticle(article)
+    }
+
+    override suspend fun checkArticle(title: String): ArticleState {
+        return categoryDetailRepository.checkArticle(title)
+    }
+
+    override suspend fun deleteArticle(title: String) {
+        categoryDetailRepository.deleteArticle(title)
     }
 }

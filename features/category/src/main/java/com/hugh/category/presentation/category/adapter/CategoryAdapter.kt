@@ -8,7 +8,7 @@ import com.hugh.category.domain.state.CategoryType
 class CategoryAdapter(private val moveCallback: (CategoryType) -> Unit) :
     ListAdapter<CategoryType, CategoryViewHolder>(object : DiffUtil.ItemCallback<CategoryType>() {
         override fun areItemsTheSame(oldItem: CategoryType, newItem: CategoryType): Boolean {
-            return oldItem == newItem
+            return oldItem.toString() == newItem.toString()
         }
 
         override fun areContentsTheSame(oldItem: CategoryType, newItem: CategoryType): Boolean {

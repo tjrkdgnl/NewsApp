@@ -6,7 +6,6 @@ import com.hugh.room.model.RoomArticle
 
 fun RoomArticle.toEntity(): ArticleEntity {
     return ArticleEntity.EMPTY.copy(
-        uid = this.uid,
         author = this.author,
         description = this.description,
         content = this.content,

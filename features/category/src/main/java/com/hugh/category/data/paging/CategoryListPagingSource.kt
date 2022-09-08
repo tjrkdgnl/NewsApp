@@ -4,12 +4,12 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.hugh.category.domain.entity.ArticleEntity
 import com.hugh.category.domain.repository.CategoryRepository
-import com.hugh.category.domain.state.ArticleState
+import com.hugh.category.domain.state.ArticlesState
 import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 import com.hugh.network.Constant
 
-internal class CategoryDetailPagingSource(
+internal class CategoryListPagingSource(
     private val articleRepository: CategoryRepository,
     private val categoryType: CategoryType,
     private val countryType: CountryType
@@ -19,12 +19,12 @@ internal class CategoryDetailPagingSource(
         val page = params.key ?: Constant.DEFAULT_PAGE_KEY
         val size = params.loadSize
 
-        val state = articleRepository.getCategoryDetailList(
+        val state = articleRepository.getCategoryList(
             categoryType, countryType, page, size
         )
 
         return when (state) {
-            is ArticleState.Success -> {
+            is ArticlesState.Success -> {
                 val nextKey = if (state.articlesEntity.articles.isEmpty())
                     null
                 else {
@@ -39,7 +39,7 @@ internal class CategoryDetailPagingSource(
                 )
             }
 
-            is ArticleState.Failure -> {
+            is ArticlesState.Failure -> {
                 LoadResult.Error(state.throwable)
             }
         }

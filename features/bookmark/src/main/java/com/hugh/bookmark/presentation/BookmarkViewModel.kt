@@ -11,5 +11,5 @@ class BookmarkViewModel @Inject constructor(
 ) : ViewModel() {
 
     val articlesFlow = bookmarkUseCase.getArticles()
-
 }
+

@@ -3,7 +3,6 @@ import java.io.Serializable
 import java.time.Instant
 
 data class ArticleEntity(
-    val uid: String,
     val author: String,
     val content: String,
     val description: String,
@@ -15,7 +14,6 @@ data class ArticleEntity(
 
     companion object {
         val EMPTY = ArticleEntity(
-            uid = "-1",
             author = "",
             content = "내용이 존재하지 않습니다.",
             description = "내용이 존재하지 않습니다.",

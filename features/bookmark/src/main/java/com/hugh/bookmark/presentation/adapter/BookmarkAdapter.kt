@@ -8,7 +8,7 @@ import com.hugh.bookmark.domain.entity.ArticleEntity
 class BookmarkAdapter : ListAdapter<ArticleEntity, BookmarkViewHolder>(
     object : DiffUtil.ItemCallback<ArticleEntity>() {
         override fun areItemsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
-            return oldItem.uid == newItem.uid
+            return oldItem.title == newItem.title
         }
 
         override fun areContentsTheSame(oldItem: ArticleEntity, newItem: ArticleEntity): Boolean {
