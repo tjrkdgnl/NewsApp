@@ -43,6 +43,7 @@ dependencies {
     implementation project(':features:category')
     implementation project(':features:bookmark')
     implementation project(':features:detail')
+    implementation project(':features:search')
     implementation project(':shared_feature:base')
     implementation project(':shared_feature:navigator')
     implementation project(':shared_feature:entity')

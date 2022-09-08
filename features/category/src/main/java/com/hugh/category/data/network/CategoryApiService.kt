@@ -1,10 +1,10 @@
 package com.hugh.category.data.network
 
-import com.hugh.category.data.model.Articles
+import com.hugh.network.model.Articles
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-internal interface CategoryApiService {
+interface CategoryApiService {
 
     @GET("top-headlines/")
     suspend fun getTopHeadlines(
@@ -13,15 +13,4 @@ internal interface CategoryApiService {
         @Query("page") page: Int,
         @Query("pageSize") pageSize: Int
     ) : Articles
-
-    @GET("everything/")
-    suspend fun getEveryThing(
-        @Query("q") type: String,
-        @Query("from") from: String?,
-        @Query("to") to: String?,
-        @Query("sortedBy") sortType: String,
-        @Query("page") page: Int,
-        @Query("pageSize") pageSize: Int
-    ): Articles
-
 }

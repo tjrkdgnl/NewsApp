@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+    implementation project(':shared_feature:entity')
+    implementation project(':shared_feature:util')
+
     implementation(retrofit)
 
     implementation deps.hilt.core

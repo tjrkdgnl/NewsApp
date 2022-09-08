@@ -6,11 +6,18 @@
     app:startDestination="@id/category"
     tools:ignore="MissingDefaultResource">
 
+
+    <fragment
+        android:id="@+id/search"
+        android:name="com.hugh.search.presentation.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search" />
+
     <fragment
         android:id="@+id/bookmark"
         android:name="com.hugh.bookmark.presentation.BookmarkFragment"
         android:label="@string/bookmark"
-        tools:layout="@layout/fragment_bookmark"/>
+        tools:layout="@layout/fragment_bookmark" />
 
     <fragment
         android:id="@+id/category"
@@ -31,6 +38,6 @@
         android:id="@+id/categoryList"
         android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
         android:label="@string/relative_list"
-        tools:layout="@layout/fragment_list"/>
+        tools:layout="@layout/fragment_list" />
 
 </navigation>

@@ -27,3 +27,4 @@ include ':features:detail'
 
 include ':shared_feature:navigator'
 include ':shared_feature:entity'
+include ':features:search'

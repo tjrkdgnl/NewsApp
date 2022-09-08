@@ -4,10 +4,10 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.hugh.CategoryType
 import com.hugh.category.domain.repository.CategoryRepository
-import com.hugh.category.domain.state.ArticlesState
-import com.hugh.category.domain.state.CountryType
 import com.hugh.entity.ArticleEntity
 import com.hugh.network.Constant
+import com.hugh.network.state.ArticlesState
+import com.hugh.network.state.CountryType
 
 internal class CategoryListPagingSource(
     private val articleRepository: CategoryRepository,

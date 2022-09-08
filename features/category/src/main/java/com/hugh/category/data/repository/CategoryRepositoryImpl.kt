@@ -6,11 +6,11 @@ import androidx.paging.PagingData
 import com.hugh.CategoryType
 import com.hugh.category.data.paging.CategoryListPagingSource
 import com.hugh.category.domain.repository.CategoryRepository
-import com.hugh.category.domain.state.ArticlesState
-import com.hugh.category.domain.state.CountryType
 import com.hugh.coroutine.IoDispatcher
 import com.hugh.entity.ArticleEntity
 import com.hugh.network.Constant
+import com.hugh.network.state.ArticlesState
+import com.hugh.network.state.CountryType
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

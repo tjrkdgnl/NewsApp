@@ -2,8 +2,8 @@ package com.hugh.category.domain.usecase
 
 import androidx.paging.PagingData
 import com.hugh.CategoryType
-import com.hugh.category.domain.state.CountryType
 import com.hugh.entity.ArticleEntity
+import com.hugh.network.state.CountryType
 import kotlinx.coroutines.flow.Flow
 
 internal interface CategoryListUseCase {
