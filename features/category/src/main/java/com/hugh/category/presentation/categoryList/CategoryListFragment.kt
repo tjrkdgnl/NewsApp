@@ -9,15 +9,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import com.hugh.callback.FragmentNavigator
 import com.hugh.category.R
 import com.hugh.category.databinding.FragmentListBinding
-import com.hugh.category.presentation.category.adapter.GridSpacingItemDecoration
 import com.hugh.category.presentation.categoryList.adapter.CategoryDetailPagingAdapter
+import com.hugh.util.GridSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class CategoryListFragment : Fragment(R.layout.fragment_list) {
@@ -25,9 +26,11 @@ class CategoryListFragment : Fragment(R.layout.fragment_list) {
     private lateinit var binding: FragmentListBinding
     private val categoryListViewModel: CategoryListViewModel by viewModels()
 
+    @Inject
+    lateinit var fragmentNavigator: FragmentNavigator
+
     private val categoryAdapter = CategoryDetailPagingAdapter { article ->
-        val action = CategoryListFragmentDirections.actionCategoryListToCategoryDetail(article)
-        findNavController().navigate(action)
+        fragmentNavigator.categoryListToCategoryDetail(article)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

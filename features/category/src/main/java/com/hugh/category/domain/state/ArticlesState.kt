@@ -1,6 +1,6 @@
 package com.hugh.category.domain.state
 
-import com.hugh.category.domain.entity.ArticlesEntity
+import com.hugh.entity.ArticlesEntity
 
 internal sealed class ArticlesState {
     data class Success(val articlesEntity: ArticlesEntity) : ArticlesState()

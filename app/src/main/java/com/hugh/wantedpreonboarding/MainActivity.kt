@@ -6,13 +6,18 @@ import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.hugh.CategoryType
 import com.hugh.base.BaseActivity
+import com.hugh.bookmark.presentation.BookmarkFragmentDirections
+import com.hugh.callback.FragmentNavigator
+import com.hugh.category.presentation.category.CategoryFragmentDirections
+import com.hugh.category.presentation.categoryList.CategoryListFragmentDirections
+import com.hugh.entity.ArticleEntity
 import com.hugh.wantedpreonboarding.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main)
-    {
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main), FragmentNavigator {
 
     private lateinit var navHost: NavHost
 
@@ -35,5 +40,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main)
 
     override fun onSupportNavigateUp(): Boolean {
         return navHost.navController.navigateUp() || super.onSupportNavigateUp()
+    }
+
+    override fun categoryListToCategoryDetail(articleEntity: ArticleEntity) {
+        val action = CategoryListFragmentDirections.actionCategoryListToCategoryDetail(articleEntity)
+        navHost.navController.navigate(action)
+    }
+
+    override fun bookmarkToCategoryDetail(articleEntity: ArticleEntity) {
+        val action = BookmarkFragmentDirections.actionBookmarkToCategoryDetail(articleEntity)
+        navHost.navController.navigate(action)
+    }
+
+    override fun categoryToCategoryList(categoryType: CategoryType) {
+        val action = CategoryFragmentDirections.actionCategoryToCategoryList(categoryType)
+        navHost.navController.navigate(action)
     }
 }

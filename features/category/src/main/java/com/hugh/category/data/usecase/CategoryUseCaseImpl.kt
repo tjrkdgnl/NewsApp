@@ -1,7 +1,7 @@
 package com.hugh.category.data.usecase
 
+import com.hugh.CategoryType
 import com.hugh.category.domain.repository.CategoryRepository
-import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.usecase.CategoryUseCase
 import javax.inject.Inject
 

@@ -3,7 +3,7 @@ package com.hugh.category.presentation.category.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.hugh.category.domain.state.CategoryType
+import com.hugh.CategoryType
 
 class CategoryAdapter(private val moveCallback: (CategoryType) -> Unit) :
     ListAdapter<CategoryType, CategoryViewHolder>(object : DiffUtil.ItemCallback<CategoryType>() {

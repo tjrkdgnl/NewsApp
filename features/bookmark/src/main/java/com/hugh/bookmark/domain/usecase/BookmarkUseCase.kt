@@ -1,6 +1,6 @@
 package com.hugh.bookmark.domain.usecase
 
-import com.hugh.bookmark.domain.entity.ArticleEntity
+import com.hugh.entity.ArticleEntity
 import kotlinx.coroutines.flow.Flow
 
 interface BookmarkUseCase {

@@ -1,10 +1,10 @@
 package com.hugh.category.domain.repository
 
 import androidx.paging.PagingData
-import com.hugh.category.domain.entity.ArticleEntity
+import com.hugh.CategoryType
 import com.hugh.category.domain.state.ArticlesState
-import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
+import com.hugh.entity.ArticleEntity
 import kotlinx.coroutines.flow.Flow
 
 internal interface CategoryRepository {

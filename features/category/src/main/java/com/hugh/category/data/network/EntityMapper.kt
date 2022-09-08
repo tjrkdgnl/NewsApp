@@ -2,8 +2,8 @@ package com.hugh.category.data.network
 
 import com.hugh.category.data.model.Article
 import com.hugh.category.data.model.Articles
-import com.hugh.category.domain.entity.ArticleEntity
-import com.hugh.category.domain.entity.ArticlesEntity
+import com.hugh.entity.ArticleEntity
+import com.hugh.entity.ArticlesEntity
 import com.hugh.util.DateFormatter
 import java.time.Instant
 

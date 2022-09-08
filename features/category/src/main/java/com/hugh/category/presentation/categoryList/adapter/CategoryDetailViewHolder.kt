@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import com.hugh.base.BaseViewHolder
 import com.hugh.category.R
 import com.hugh.category.databinding.ViewholderCategoryListBinding
-import com.hugh.category.domain.entity.ArticleEntity
+import com.hugh.entity.ArticleEntity
 
 internal class CategoryDetailViewHolder(
     parent: ViewGroup,

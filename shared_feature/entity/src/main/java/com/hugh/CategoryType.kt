@@ -1,0 +1,5 @@
+package com.hugh
+
+enum class CategoryType {
+    BUSINESS, ENTERTAINMENT, GENERAL, HEALTH, SCIENCE, SPORTS, TECHNOLOGY,NONE
+}

@@ -1,6 +1,6 @@
 package com.hugh.bookmark.data
 
-import com.hugh.bookmark.domain.entity.ArticleEntity
+import com.hugh.entity.ArticleEntity
 import com.hugh.room.model.RoomArticle
 
 

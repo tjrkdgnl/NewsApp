@@ -2,11 +2,11 @@ package com.hugh.category.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.hugh.category.domain.entity.ArticleEntity
+import com.hugh.CategoryType
 import com.hugh.category.domain.repository.CategoryRepository
 import com.hugh.category.domain.state.ArticlesState
-import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
+import com.hugh.entity.ArticleEntity
 import com.hugh.network.Constant
 
 internal class CategoryListPagingSource(
