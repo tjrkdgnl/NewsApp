@@ -1,9 +1,9 @@
 package com.hugh.category.data.repository
 
+import com.hugh.CategoryType
 import com.hugh.category.data.network.CategoryApiService
 import com.hugh.category.data.network.toEntity
 import com.hugh.category.domain.state.ArticlesState
-import com.hugh.category.domain.state.CategoryType
 import com.hugh.category.domain.state.CountryType
 import javax.inject.Inject
 

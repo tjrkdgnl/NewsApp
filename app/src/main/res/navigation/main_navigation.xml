@@ -3,10 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/category_navigation"
+    app:startDestination="@id/category"
     tools:ignore="MissingDefaultResource">
 
-    <include app:graph="@navigation/fragment_category"  />
-    <include app:graph="@navigation/bookmark_navigation" />
+    <fragment
+        android:id="@+id/bookmark"
+        android:name="com.hugh.bookmark.presentation.BookmarkFragment"
+        android:label="@string/bookmark"
+        tools:layout="@layout/fragment_bookmark"/>
+
+    <fragment
+        android:id="@+id/category"
+        android:name="com.hugh.category.presentation.category.CategoryFragment"
+        android:label="@string/category"
+        tools:layout="@layout/fragment_category">
+
+        <action
+            android:id="@+id/action_category_to_categoryList"
+            app:destination="@id/categoryList">
+            <argument
+                android:name="categoryType"
+                app:argType="com.hugh.CategoryType" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryList"
+        android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
+        android:label="@string/relative_list"
+        tools:layout="@layout/fragment_list"/>
 
 </navigation>

@@ -2,7 +2,7 @@ package com.hugh.category.presentation.categoryList
 
 import androidx.lifecycle.*
 import androidx.paging.cachedIn
-import com.hugh.category.domain.state.CategoryType
+import com.hugh.CategoryType
 import com.hugh.category.domain.usecase.CategoryListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

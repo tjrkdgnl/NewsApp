@@ -7,7 +7,7 @@
 
         <variable
             name="article"
-            type="com.hugh.category.domain.entity.ArticleEntity" />
+            type="com.hugh.entity.ArticleEntity" />
     </data>
 
     <LinearLayout

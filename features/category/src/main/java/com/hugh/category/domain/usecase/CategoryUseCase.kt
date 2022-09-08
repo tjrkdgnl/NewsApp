@@ -1,6 +1,6 @@
 package com.hugh.category.domain.usecase
 
-import com.hugh.category.domain.state.CategoryType
+import com.hugh.CategoryType
 
 internal interface CategoryUseCase {
 

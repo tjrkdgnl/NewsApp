@@ -1,10 +1,10 @@
 package com.hugh.category.presentation.category.adapter
 
 import android.view.ViewGroup
+import com.hugh.CategoryType
 import com.hugh.base.BaseViewHolder
 import com.hugh.category.R
 import com.hugh.category.databinding.ViewholderCategoryBinding
-import com.hugh.category.domain.state.CategoryType
 
 class CategoryViewHolder(
     parent: ViewGroup,

@@ -3,7 +3,7 @@ package com.hugh.category.presentation.categoryList.adapter
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.hugh.category.domain.entity.ArticleEntity
+import com.hugh.entity.ArticleEntity
 
 internal class CategoryDetailPagingAdapter(
     private val moveArticleDetailCallback: (ArticleEntity) -> Unit
