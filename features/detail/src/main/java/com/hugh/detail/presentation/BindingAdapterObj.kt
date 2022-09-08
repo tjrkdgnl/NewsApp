@@ -1,4 +1,4 @@
-package com.hugh.detail.presentation.categoryDetail
+package com.hugh.detail.presentation
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

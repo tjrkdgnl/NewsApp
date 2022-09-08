@@ -1,4 +1,4 @@
-package com.hugh.callback
+package com.hugh.navigator
 
 import org.junit.Test
 

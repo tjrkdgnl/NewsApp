@@ -10,15 +10,7 @@
         android:id="@+id/bookmark"
         android:name="com.hugh.bookmark.presentation.BookmarkFragment"
         android:label="@string/bookmark"
-        tools:layout="@layout/fragment_bookmark">
-        <action
-            android:id="@+id/action_bookmark_to_categoryDetail"
-            app:destination="@id/categoryDetail">
-            <argument
-                android:name="article"
-                app:argType="com.hugh.entity.ArticleEntity" />
-        </action>
-    </fragment>
+        tools:layout="@layout/fragment_bookmark"/>
 
     <fragment
         android:id="@+id/category"
@@ -39,20 +31,6 @@
         android:id="@+id/categoryList"
         android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
         android:label="@string/relative_list"
-        tools:layout="@layout/fragment_list">
-        <action
-            android:id="@+id/action_categoryList_to_categoryDetail"
-            app:destination="@id/categoryDetail">
-            <argument
-                android:name="article"
-                app:argType="com.hugh.entity.ArticleEntity" />
-        </action>
-    </fragment>
-
-    <fragment
-        android:id="@+id/categoryDetail"
-        android:name="com.hugh.detail.presentation.categoryDetail.CategoryDetail"
-        android:label="@string/detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_list"/>
 
 </navigation>

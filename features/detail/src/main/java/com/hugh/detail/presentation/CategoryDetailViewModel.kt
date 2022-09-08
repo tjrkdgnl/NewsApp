@@ -1,4 +1,4 @@
-package com.hugh.detail.presentation.categoryDetail
+package com.hugh.detail.presentation
 
 import androidx.lifecycle.*
 import com.hugh.detail.domain.state.ArticleState

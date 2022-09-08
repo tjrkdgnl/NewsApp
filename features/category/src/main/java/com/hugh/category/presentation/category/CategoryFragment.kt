@@ -5,8 +5,9 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import com.hugh.callback.FragmentNavigator
+import com.hugh.navigator.FragmentNavigator
 import com.hugh.category.R
 import com.hugh.category.databinding.FragmentCategoryBinding
 import com.hugh.category.presentation.category.adapter.CategoryAdapter
@@ -31,7 +32,7 @@ class CategoryFragment : Fragment(R.layout.fragment_category) {
 
         binding.recycler.apply {
             adapter = CategoryAdapter {
-                fragmentNavigator.categoryToCategoryList(it)
+                fragmentNavigator.categoryToCategoryList(it,findNavController())
             }.also {
                 it.submitList(articleViewModel.createCategoryTypeList())
             }

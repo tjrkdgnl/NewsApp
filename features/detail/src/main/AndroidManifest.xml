@@ -2,4 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hugh.detail">
 
+    <application>
+        <activity android:name=".presentation.CategoryDetail" android:exported="true"/>
+    </application>
+
 </manifest>

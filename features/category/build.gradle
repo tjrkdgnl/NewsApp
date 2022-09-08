@@ -44,7 +44,7 @@ dependencies {
     implementation project(':shared_feature:util')
     implementation project(':shared_feature:room')
     implementation project(':shared_feature:entity')
-    implementation project(':shared_feature:callback')
+    implementation project(':shared_feature:navigator')
 
     implementation(androidx)
     implementation(material)

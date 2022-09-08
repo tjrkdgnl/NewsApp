@@ -1,31 +1,23 @@
-package com.hugh.detail.presentation.categoryDetail
+package com.hugh.detail.presentation
 
 import android.os.Bundle
-import android.view.View
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.activity.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.hugh.base.BaseActivity
 import com.hugh.detail.R
-import com.hugh.detail.databinding.FragmentDetailBinding
+import com.hugh.detail.databinding.ActivityDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class CategoryDetail : Fragment(R.layout.fragment_detail) {
-
-    private lateinit var binding: FragmentDetailBinding
-
+class CategoryDetail : BaseActivity<ActivityDetailBinding>(R.layout.activity_detail) {
     private val categoryDetailViewModel: CategoryDetailViewModel by viewModels()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding = DataBindingUtil.bind(view)!!
-        binding.lifecycleOwner = viewLifecycleOwner
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding.viewModel = categoryDetailViewModel
 
         lifecycleScope.launch {

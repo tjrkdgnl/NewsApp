@@ -35,4 +35,6 @@ android {
 
 dependencies {
     implementation project(':shared_feature:entity')
+
+    implementation(framentNavigation)
 }

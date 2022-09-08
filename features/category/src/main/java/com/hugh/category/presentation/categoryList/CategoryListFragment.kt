@@ -10,7 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
-import com.hugh.callback.FragmentNavigator
+import com.hugh.navigator.FragmentNavigator
 import com.hugh.category.R
 import com.hugh.category.databinding.FragmentListBinding
 import com.hugh.category.presentation.categoryList.adapter.CategoryDetailPagingAdapter
@@ -30,7 +30,7 @@ class CategoryListFragment : Fragment(R.layout.fragment_list) {
     lateinit var fragmentNavigator: FragmentNavigator
 
     private val categoryAdapter = CategoryDetailPagingAdapter { article ->
-        fragmentNavigator.categoryListToCategoryDetail(article)
+        fragmentNavigator.moveToCategoryDetail(binding.root.context, article)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
