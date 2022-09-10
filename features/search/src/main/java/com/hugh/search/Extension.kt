@@ -12,7 +12,6 @@ import androidx.paging.PagingData
 import com.hugh.entity.ArticleEntity
 import com.hugh.search.databinding.FragmentSearchBinding
 import com.hugh.search.presentation.adapter.SearchAdapter
-import com.hugh.search.presentation.state.UiState
 import com.hugh.search.presentation.state.UserAction
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.*
@@ -20,17 +19,12 @@ import kotlinx.coroutines.launch
 
 
 fun FragmentSearchBinding.bindState(
-    uiState: StateFlow<UiState>,
     pagingData: Flow<PagingData<ArticleEntity>>,
     accept: (UserAction) -> Unit,
     scope: CoroutineScope,
     adapter: SearchAdapter
 ) {
-    bindSearch(
-        uiState = uiState,
-        onKeywordChange = accept,
-        scope = scope
-    )
+    bindSearch(onKeywordChange = accept)
 
     bindList(
         adapter = adapter,
@@ -40,9 +34,7 @@ fun FragmentSearchBinding.bindState(
 }
 
 fun FragmentSearchBinding.bindSearch(
-    uiState: StateFlow<UiState>,
     onKeywordChange: (UserAction.Search) -> Unit,
-    scope: CoroutineScope
 ) {
     searchEditText.setOnEditorActionListener { _, actionId, _ ->
         if (actionId == EditorInfo.IME_ACTION_GO) {
@@ -59,13 +51,6 @@ fun FragmentSearchBinding.bindSearch(
         } else {
             false
         }
-    }
-
-    scope.launch {
-        uiState
-            .map { it.keyword }
-            .distinctUntilChanged()
-            .collect(searchEditText::setText)
     }
 }
 
@@ -88,18 +73,18 @@ fun FragmentSearchBinding.bindList(
     scope: CoroutineScope
 ) {
     scope.launch {
-        this@bindList.lifecycleOwner!!.repeatOnLifecycle(Lifecycle.State.STARTED) {
+        lifecycleOwner!!.repeatOnLifecycle(Lifecycle.State.STARTED) {
             adapter.loadStateFlow.collectLatest {
-                this@bindList.progressBar.isVisible = it.refresh is LoadState.Loading
-                this@bindList.emptyResultText.isVisible =
+                progressBar.isVisible = it.refresh is LoadState.Loading
+                emptyResultText.isVisible =
                     it.refresh is LoadState.NotLoading && adapter.itemCount == 0
-                this@bindList.errorText.isVisible = it.refresh is LoadState.Error
+                errorText.isVisible = it.refresh is LoadState.Error
             }
         }
     }
 
     scope.launch {
-        this@bindList.lifecycleOwner!!.repeatOnLifecycle(Lifecycle.State.STARTED) {
+        lifecycleOwner!!.repeatOnLifecycle(Lifecycle.State.STARTED) {
             pagingData.collect(adapter::submitData)
         }
     }
