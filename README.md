@@ -95,7 +95,7 @@
   - RepositoryModule을 제공하여 UseCase에서 RepositoryImpl를 주입받을 수 있는 방법을 제공합니다.
   - NetworkModule을 통해 Retrofit에서 사용할 ApiService를 구성하고 이 ApiService를 통해 Network통신을 위한 방법을 제공합니다.  
 
-![image](https://user-images.githubusercontent.com/45396949/189476059-54e3a481-6b94-4200-9080-1721fe341257.png)
+![image](https://user-images.githubusercontent.com/45396949/189485927-2671d543-6c07-4921-9fbc-fdee1ca2174d.png)
 
 ## 라이브러리 ##
 ### JetPack ### 
