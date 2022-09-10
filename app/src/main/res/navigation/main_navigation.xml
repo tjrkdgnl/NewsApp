@@ -14,6 +14,12 @@
         tools:layout="@layout/fragment_search" />
 
     <fragment
+        android:id="@+id/topNews"
+        android:name="com.hugh.top_news.presentation.TopNewsFragment"
+        android:label="@string/topNews"
+        tools:layout="@layout/fragment_topnews" />
+
+    <fragment
         android:id="@+id/bookmark"
         android:name="com.hugh.bookmark.presentation.BookmarkFragment"
         android:label="@string/bookmark"
