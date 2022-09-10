@@ -36,8 +36,8 @@
 
     <fragment
         android:id="@+id/categoryList"
-        android:name="com.hugh.category.presentation.categoryList.CategoryListFragment"
+        android:name="com.hugh.category.presentation.categoryList.CategoryListActivity"
         android:label="@string/relative_list"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/activity_list" />
 
 </navigation>

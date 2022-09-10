@@ -12,7 +12,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.hugh.bookmark.R
 import com.hugh.bookmark.databinding.FragmentBookmarkBinding
 import com.hugh.bookmark.presentation.adapter.BookmarkAdapter
-import com.hugh.navigator.FragmentNavigator
+import com.hugh.navigator.CategoryDetailNavigator
 import com.hugh.util.GridSpacingItemDecoration
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -27,7 +27,7 @@ class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
     private val bookmarkViewModel: BookmarkViewModel by viewModels()
 
     @Inject
-    lateinit var fragmentNavigator: FragmentNavigator
+    lateinit var categoryDetailNavigator: CategoryDetailNavigator
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,7 +37,9 @@ class BookmarkFragment : Fragment(R.layout.fragment_bookmark) {
 
         binding.recyclerView.apply {
             adapter = BookmarkAdapter {
-                fragmentNavigator.moveToCategoryDetail(binding.root.context, it)
+                binding.root.context.startActivity(
+                    categoryDetailNavigator.intent(binding.root.context, it)
+                )
             }
             addItemDecoration(GridSpacingItemDecoration(1, 30))
         }
