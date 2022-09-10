@@ -1,8 +1,8 @@
-package com.hugh.category.domain.state
+package com.hugh.network.state
 
 import com.hugh.entity.ArticlesEntity
 
-internal sealed class ArticlesState {
+sealed class ArticlesState {
     data class Success(val articlesEntity: ArticlesEntity) : ArticlesState()
     data class Failure(val throwable: Throwable) : ArticlesState()
 }

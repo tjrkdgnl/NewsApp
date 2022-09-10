@@ -4,9 +4,9 @@
     tools:ignore="MissingDefaultResource">
 
     <item
-        android:id="@+id/headLine"
+        android:id="@+id/search"
         android:icon="@drawable/headline_selector"
-        android:title="@string/head_line" />
+        android:title="@string/search" />
     <item
         android:id="@+id/category"
         android:icon="@drawable/category_selector"

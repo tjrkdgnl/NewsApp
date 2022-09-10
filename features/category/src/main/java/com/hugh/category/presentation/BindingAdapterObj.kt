@@ -42,6 +42,7 @@ object BindingAdapterObj {
                 textView.text = categoryType.toString()
                 textView.setCompoundDrawablesWithIntrinsicBounds(0, R.drawable.technology, 0, 0)
             }
+            else -> {}
         }
     }
 

@@ -1,4 +1,4 @@
-package com.hugh.category.data.model
+package com.hugh.network.model
 
 import kotlinx.serialization.Serializable
 

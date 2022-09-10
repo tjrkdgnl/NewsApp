@@ -2,9 +2,9 @@ package com.hugh.category.data.repository
 
 import com.hugh.CategoryType
 import com.hugh.category.data.network.CategoryApiService
-import com.hugh.category.data.network.toEntity
-import com.hugh.category.domain.state.ArticlesState
-import com.hugh.category.domain.state.CountryType
+import com.hugh.network.state.ArticlesState
+import com.hugh.network.state.CountryType
+import com.hugh.network.toEntity
 import javax.inject.Inject
 
 internal class RemoteDataSource @Inject constructor(
@@ -31,5 +31,4 @@ internal class RemoteDataSource @Inject constructor(
             )
         }
     }
-
 }

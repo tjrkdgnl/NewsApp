@@ -3,8 +3,8 @@ package com.hugh.category.data.repository
 import androidx.room.withTransaction
 import com.hugh.category.data.room.toEntity
 import com.hugh.category.data.room.toRoom
-import com.hugh.category.domain.state.ArticleState
 import com.hugh.entity.ArticleEntity
+import com.hugh.network.state.ArticleState
 import com.hugh.room.ArticleDataBase
 import javax.inject.Inject
 

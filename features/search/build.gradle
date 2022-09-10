@@ -1,0 +1,74 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlinx-serialization'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+android {
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        minSdk versions.minSdk
+        targetSdk versions.targetSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation project(':shared_feature:base')
+    implementation project(':shared_feature:network')
+    implementation project(':shared_feature:coroutine')
+    implementation project(':shared_feature:util')
+    implementation project(':shared_feature:room')
+    implementation project(':shared_feature:entity')
+    implementation project(':shared_feature:navigator')
+
+    implementation(androidx)
+    implementation(material)
+    implementation(junit4)
+    testImplementation(junit4Test)
+    implementation(ktxVersions)
+    implementation(retrofit)
+    implementation(framentNavigation)
+
+    implementation deps.coroutine.core
+
+    implementation deps.hilt.core
+    kapt deps.hilt.compiler
+
+    implementation deps.timber.core
+
+    implementation deps.jsonSerialization.core
+
+    implementation deps.paging3.core
+
+    implementation deps.glide.core
+    kapt deps.glide.compiler
+
+    implementation deps.room.core
+    implementation deps.room.ktx
+    kapt deps.room.compiler
+}

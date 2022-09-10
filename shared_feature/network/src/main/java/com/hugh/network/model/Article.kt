@@ -1,5 +1,6 @@
-package com.hugh.category.data.model
+package com.hugh.network.model
 
+import com.hugh.category.data.model.Source
 import kotlinx.serialization.Serializable
 
 @Serializable

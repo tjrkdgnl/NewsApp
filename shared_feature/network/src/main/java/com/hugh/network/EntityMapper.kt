@@ -1,14 +1,13 @@
-package com.hugh.category.data.network
+package com.hugh.network
 
-import com.hugh.category.data.model.Article
-import com.hugh.category.data.model.Articles
+import com.hugh.network.model.Article
+import com.hugh.network.model.Articles
 import com.hugh.entity.ArticleEntity
 import com.hugh.entity.ArticlesEntity
 import com.hugh.util.DateFormatter
 import java.time.Instant
 
-
-internal fun Articles.toEntity(): ArticlesEntity {
+fun Articles.toEntity(): ArticlesEntity {
     return ArticlesEntity(
         articles = this.articles
             .filterNot { it.urlToImage == null || it.description == null }
@@ -16,7 +15,7 @@ internal fun Articles.toEntity(): ArticlesEntity {
     )
 }
 
-internal fun Article.toEntity(): ArticleEntity {
+fun Article.toEntity(): ArticleEntity {
     return ArticleEntity(
         author = this.author ?: "",
         content = this.content ?: "내용이 존재하지 않습니다.",
