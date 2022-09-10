@@ -2,6 +2,7 @@ package com.hugh.detail.presentation
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -18,6 +19,7 @@ class CategoryDetail : BaseActivity<ActivityDetailBinding>(R.layout.activity_det
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initToolbar()
         binding.viewModel = categoryDetailViewModel
 
         lifecycleScope.launch {
@@ -34,5 +36,12 @@ class CategoryDetail : BaseActivity<ActivityDetailBinding>(R.layout.activity_det
                 }
             }
         }
+    }
+
+    private fun initToolbar() {
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_700))
+        binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

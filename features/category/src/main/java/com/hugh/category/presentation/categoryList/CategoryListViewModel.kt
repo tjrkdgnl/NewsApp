@@ -30,4 +30,17 @@ internal class CategoryListViewModel @Inject constructor(
     fun retryInit() {
         _retryState.value = false
     }
+
+    fun getCategoryName(): String {
+        return when (categoryType) {
+            CategoryType.BUSINESS -> "비즈니스"
+            CategoryType.ENTERTAINMENT -> "엔터테인먼트"
+            CategoryType.GENERAL -> "제네럴"
+            CategoryType.HEALTH -> "헬스"
+            CategoryType.SCIENCE -> "사이언스"
+            CategoryType.SPORTS -> "스포츠"
+            CategoryType.TECHNOLOGY -> "테크놀로지"
+            CategoryType.NONE -> ""
+        }
+    }
 }

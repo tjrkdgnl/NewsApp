@@ -2,6 +2,7 @@ package com.hugh.category.presentation.categoryList
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -37,6 +38,8 @@ class CategoryListActivity : BaseActivity<ActivityListBinding>(R.layout.activity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        initToolbar()
+
         categoryListViewModel.retryState.observe(this) { retry ->
             if (retry) {
                 categoryAdapter.retry()
@@ -66,5 +69,13 @@ class CategoryListActivity : BaseActivity<ActivityListBinding>(R.layout.activity
                 }
             }
         }
+    }
+
+    private fun initToolbar() {
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setBackgroundColor(ContextCompat.getColor(this, R.color.purple_700))
+        binding.toolbar.setNavigationOnClickListener { onBackPressed() }
+        supportActionBar?.title = categoryListViewModel.getCategoryName()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 }

@@ -5,6 +5,7 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.google.android.material.appbar.MaterialToolbar
 import com.hugh.CategoryType
 import com.hugh.category.R
 
@@ -54,5 +55,22 @@ object BindingAdapterObj {
             .transition(DrawableTransitionOptions.withCrossFade(90))
             .error(R.drawable.placeholder_gray)
             .into(imageView)
+    }
+
+    @JvmStatic
+    @BindingAdapter("setToolbarTitle")
+    fun setToolbarTitle(toolbar: MaterialToolbar, categoryType: CategoryType?) {
+        categoryType?.let { type ->
+            when (type) {
+                CategoryType.BUSINESS -> toolbar.title = "비즈니스"
+                CategoryType.ENTERTAINMENT -> toolbar.title = "엔터테인먼트"
+                CategoryType.GENERAL -> toolbar.title = "제네럴"
+                CategoryType.HEALTH -> toolbar.title = "헬스"
+                CategoryType.SCIENCE -> toolbar.title = "사이언스"
+                CategoryType.SPORTS -> toolbar.title = "스포츠"
+                CategoryType.TECHNOLOGY -> toolbar.title = "테크놀로지"
+                CategoryType.NONE -> {}
+            }
+        }
     }
 }
