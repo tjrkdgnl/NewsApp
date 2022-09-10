@@ -50,8 +50,30 @@
 
 ![image](https://user-images.githubusercontent.com/45396949/189476059-54e3a481-6b94-4200-9080-1721fe341257.png)
 
-## Feature ##
+## 라이브러리 ##
+### JetPack ### 
+  - Paging3
+  - Fragment Navigation
 
+### Network ###
+  - Retrofit
+  - Kotlinx.Serailization
+
+### Asynchronous ###
+- Coroutine
+- Flow
+
+### DI ###
+  - Hilt
+  
+### DataBase ###
+  - Room
+
+### Image ###
+  - Glide
+
+
+## Feature ##
 
 ### 검색하기 ###
 - 키워드를 검색하면 해당 키워드를 포함한 기사를 검색할 수 있습니다.
