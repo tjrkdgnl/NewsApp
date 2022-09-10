@@ -60,7 +60,10 @@
 - 에러가 발생한 경우, 안내문구를 통해 없음을 나타냅니다.
 - 기사내용을 클릭할 수 있으며, 세부 기사내용을 볼 수 있으며 북마크를 통해 저장이 가능합니다.
 
-![검색하기](https://user-images.githubusercontent.com/45396949/189478014-e39b871c-f025-4870-ad86-57be1eb37c8f.gif)
+| 검색 | 검색없음 | 검색에러(네트워크 연결x) |
+| --- | ---- | ---- |
+| ![검색하기](https://user-images.githubusercontent.com/45396949/189478014-e39b871c-f025-4870-ad86-57be1eb37c8f.gif) | ![검색없음](https://user-images.githubusercontent.com/45396949/189478671-eb32d8b2-7b36-43d6-bbeb-1abe8e963c0e.gif) | ![검색에러](https://user-images.githubusercontent.com/45396949/189478673-25b76b20-a3f8-41da-bb3f-9a5515101a42.gif) |
+
 
 
 ### 탑뉴스 ###
@@ -68,7 +71,12 @@
 - Paging3 라이브러리를 이용하여 page단위로 뉴스들을 불러옵니다.
 - 클릭하여 세부 기사내용을 볼 수 있습니다.
 
-![탑뉴스](https://user-images.githubusercontent.com/45396949/189478120-99330bdd-c6f1-4b7b-9785-ecd8455a6128.gif)
+| 탑뉴스 | 재시도 |
+| :---: | :---: |
+| ![탑뉴스](https://user-images.githubusercontent.com/45396949/189478120-99330bdd-c6f1-4b7b-9785-ecd8455a6128.gif) | ![탑뉴스 재시도](https://user-images.githubusercontent.com/45396949/189478780-b0e36f35-76f1-4fa2-b2c2-1b2710948ed9.gif) |
+
+
+
 
 ### 카테고리 ###
 - 기사 카테고리를 보여줍니다.
