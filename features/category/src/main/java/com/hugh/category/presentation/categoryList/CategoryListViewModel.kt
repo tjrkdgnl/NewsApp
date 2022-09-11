@@ -5,6 +5,8 @@ import androidx.paging.cachedIn
 import com.hugh.CategoryType
 import com.hugh.category.domain.usecase.CategoryListUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -15,20 +17,16 @@ internal class CategoryListViewModel @Inject constructor(
 
     val categoryType = bundle.get<CategoryType>("categoryType") ?: CategoryType.NONE
 
-    private val _retryState = MutableLiveData(false)
-    val retryState: LiveData<Boolean>
-        get() = _retryState
+    val retryFlow = MutableSharedFlow<Boolean>()
 
     val categoryDetailFlow = categoryListUseCase.getCategoryDetailArticles(
         categoryType = categoryType
     ).cachedIn(viewModelScope)
 
     fun retry() {
-        _retryState.value = true
-    }
-
-    fun retryInit() {
-        _retryState.value = false
+        viewModelScope.launch {
+            retryFlow.emit(true)
+        }
     }
 
     fun getCategoryName(): String {

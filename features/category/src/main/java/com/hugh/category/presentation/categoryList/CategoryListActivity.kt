@@ -40,16 +40,19 @@ class CategoryListActivity : BaseActivity<ActivityListBinding>(R.layout.activity
         super.onCreate(savedInstanceState)
         initToolbar()
 
-        categoryListViewModel.retryState.observe(this) { retry ->
-            if (retry) {
-                categoryAdapter.retry()
-                categoryListViewModel.retryInit()
-            }
-        }
+        binding.viewModel = categoryListViewModel
 
         binding.pagingRecyclerView.apply {
             adapter = categoryAdapter
             addItemDecoration(GridSpacingItemDecoration(1, 30))
+        }
+
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                categoryListViewModel.retryFlow.collectLatest {
+                    categoryAdapter.retry()
+                }
+            }
         }
 
         lifecycleScope.launch {
