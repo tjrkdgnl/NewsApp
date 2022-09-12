@@ -2,12 +2,18 @@ package com.hugh.category.presentation
 
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.appbar.MaterialToolbar
 import com.hugh.CategoryType
 import com.hugh.category.R
+import com.hugh.mylibrary.BitmapCreator
+import com.hugh.mylibrary.LruCacheCreator
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 object BindingAdapterObj {
 
@@ -50,8 +56,24 @@ object BindingAdapterObj {
     @JvmStatic
     @BindingAdapter("articleImage")
     fun setArticleImage(imageView: ImageView, url: String?) {
+        CoroutineScope(Dispatchers.Main).launch {
+            url?.let {
+                val bitmap = LruCacheCreator.getInstance().get(url) ?: run {
+                    LruCacheCreator.decodeThumbNailBitmapFromResource(
+                        res = imageView.context.resources,
+                        resId = R.id.articleImage,
+                        reqWidth = 100,
+                        reqHeight = 100
+                    )?.also {
+                        LruCacheCreator.getInstance().put(url, it)
+                    }
+                }
+                imageView.setImageBitmap(bitmap)
+            }
+        }
         Glide.with(imageView.context)
             .load(url)
+            .thumbnail()
             .transition(DrawableTransitionOptions.withCrossFade(90))
             .error(R.drawable.placeholder_gray)
             .into(imageView)

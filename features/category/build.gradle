@@ -45,6 +45,7 @@ dependencies {
     implementation project(':shared_feature:room')
     implementation project(':shared_feature:entity')
     implementation project(':shared_feature:navigator')
+    implementation project(':shared_feature:image_load')
 
     implementation(androidx)
     implementation(material)

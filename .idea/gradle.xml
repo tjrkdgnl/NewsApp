@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/shared_feature/base" />
             <option value="$PROJECT_DIR$/shared_feature/coroutine" />
             <option value="$PROJECT_DIR$/shared_feature/entity" />
+            <option value="$PROJECT_DIR$/shared_feature/image_load" />
             <option value="$PROJECT_DIR$/shared_feature/navigator" />
             <option value="$PROJECT_DIR$/shared_feature/network" />
             <option value="$PROJECT_DIR$/shared_feature/room" />
