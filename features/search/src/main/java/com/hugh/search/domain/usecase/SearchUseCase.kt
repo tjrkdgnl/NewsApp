@@ -4,7 +4,7 @@ import androidx.paging.PagingData
 import com.hugh.entity.ArticleEntity
 import kotlinx.coroutines.flow.Flow
 
-interface SearchUseCase {
+internal interface SearchUseCase {
 
     fun search(keyword: String): Flow<PagingData<ArticleEntity>>
 }

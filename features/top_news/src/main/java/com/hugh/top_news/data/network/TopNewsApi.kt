@@ -4,7 +4,7 @@ import com.hugh.network.model.Articles
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface TopNewsApi {
+internal interface TopNewsApi {
 
     @GET("top-headlines/")
     suspend fun getTopHeadlines(

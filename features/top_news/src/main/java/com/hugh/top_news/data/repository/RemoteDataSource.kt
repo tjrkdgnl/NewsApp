@@ -6,7 +6,7 @@ import com.hugh.network.toEntity
 import com.hugh.top_news.data.network.TopNewsApi
 import javax.inject.Inject
 
-class RemoteDataSource @Inject constructor(
+internal class RemoteDataSource @Inject constructor(
     private val topNewsApi: TopNewsApi
 ) {
 

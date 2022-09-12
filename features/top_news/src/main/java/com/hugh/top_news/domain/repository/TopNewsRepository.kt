@@ -6,7 +6,7 @@ import com.hugh.network.state.ArticlesState
 import com.hugh.network.state.CountryType
 import kotlinx.coroutines.flow.Flow
 
-interface TopNewsRepository {
+internal interface TopNewsRepository {
 
     fun topNewsFlow(  countryType: CountryType): Flow<PagingData<ArticleEntity>>
     suspend fun getTopNews(countryType: CountryType, page: Int, pageSize: Int): ArticlesState

@@ -7,7 +7,7 @@ import com.hugh.search.domain.usecase.SearchUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class SearchUseCaseImpl @Inject constructor(
+internal class SearchUseCaseImpl @Inject constructor(
     private val searchRepository: SearchRepository
 ) : SearchUseCase {
 

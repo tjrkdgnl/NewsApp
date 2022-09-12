@@ -5,7 +5,7 @@ import com.hugh.entity.ArticleEntity
 import com.hugh.network.state.CountryType
 import kotlinx.coroutines.flow.Flow
 
-interface TopNewsUseCase {
+internal interface TopNewsUseCase {
 
     fun topNewsFlow(countryType: CountryType): Flow<PagingData<ArticleEntity>>
 }

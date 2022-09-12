@@ -8,7 +8,7 @@ import com.hugh.top_news.domain.usecase.TopNewsUseCase
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class TopNewsUseCaseImpl @Inject constructor(
+internal class TopNewsUseCaseImpl @Inject constructor(
     private val topNewsRepository: TopNewsRepository
 ) : TopNewsUseCase {
 

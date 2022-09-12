@@ -12,7 +12,7 @@ import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
-class TopNewsViewModel @Inject constructor(
+internal class TopNewsViewModel @Inject constructor(
     private val topNewsUseCase: TopNewsUseCase
 ) : ViewModel() {
 

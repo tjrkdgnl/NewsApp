@@ -5,7 +5,7 @@ import com.hugh.entity.ArticleEntity
 import com.hugh.network.state.ArticlesState
 import kotlinx.coroutines.flow.Flow
 
-interface SearchRepository {
+internal interface SearchRepository {
 
     fun searchFlow(keyword: String): Flow<PagingData<ArticleEntity>>
 

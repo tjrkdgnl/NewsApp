@@ -12,7 +12,7 @@ import com.hugh.top_news.domain.repository.TopNewsRepository
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class TopNewsRepositoryImpl @Inject constructor(
+internal class TopNewsRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource
 ) : TopNewsRepository {
 

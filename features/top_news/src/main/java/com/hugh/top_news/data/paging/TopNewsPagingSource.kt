@@ -8,7 +8,7 @@ import com.hugh.network.state.ArticlesState
 import com.hugh.network.state.CountryType
 import com.hugh.top_news.data.repository.RemoteDataSource
 
-class TopNewsPagingSource(
+internal class TopNewsPagingSource(
     private val remoteDataSource: RemoteDataSource,
     private val countryType: CountryType
 ) : PagingSource<Int, ArticleEntity>() {

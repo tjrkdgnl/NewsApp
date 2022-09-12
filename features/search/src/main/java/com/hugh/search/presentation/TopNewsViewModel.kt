@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TopNewsViewModel @Inject constructor(
+internal class TopNewsViewModel @Inject constructor(
     private val searchUseCase: SearchUseCase
 ) : ViewModel() {
 
