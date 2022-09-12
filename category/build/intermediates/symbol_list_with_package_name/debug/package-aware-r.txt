@@ -1,0 +1,4 @@
+com.hugh.category
+drawable drawable
+layout activity_main
+style Theme_WantedPreOnboarding

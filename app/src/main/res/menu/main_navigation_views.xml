@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="MissingDefaultResource">
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search_selector"
+        android:title="@string/search" />
+    <item
+        android:id="@+id/topNews"
+        android:icon="@drawable/headline_selector"
+        android:title="@string/topNews" />
+    <item
+        android:id="@+id/category"
+        android:icon="@drawable/category_selector"
+        android:title="@string/category" />
+
+    <item
+        android:id="@+id/bookmark"
+        android:icon="@drawable/bookmark_selector"
+        android:title="@string/bookmark" />
+</menu>

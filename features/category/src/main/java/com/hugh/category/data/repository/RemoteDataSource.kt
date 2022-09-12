@@ -1,29 +1,32 @@
 package com.hugh.category.data.repository
 
+import com.hugh.CategoryType
 import com.hugh.category.data.network.CategoryApiService
-import com.hugh.category.data.network.toEntity
-import com.hugh.category.domain.state.ArticleState
+import com.hugh.network.state.ArticlesState
+import com.hugh.network.state.CountryType
+import com.hugh.network.toEntity
 import javax.inject.Inject
 
-class RemoteDataSource @Inject constructor(
+internal class RemoteDataSource @Inject constructor(
     private val apiService: CategoryApiService
 ) {
-    suspend fun getEverything(
-        type: String,
-        from: String?,
-        to: String?,
+    suspend fun getCategoryList(
+        categoryType: CategoryType,
+        countryType: CountryType,
         page: Int,
-        pageSize: Int,
-        sortType: String
-    ): ArticleState {
+        pageSize: Int
+    ): ArticlesState {
         return runCatching {
-            ArticleState.Success(
-                articlesEntity = apiService.getEveryThing(
-                    type, from, to, sortType, page, pageSize
+            ArticlesState.Success(
+                articlesEntity = apiService.getTopHeadlines(
+                    country = countryType.toString(),
+                    category = categoryType.toString(),
+                    page = page,
+                    pageSize = pageSize
                 ).toEntity()
             )
         }.getOrElse {
-            ArticleState.Failure(
+            ArticlesState.Failure(
                 throwable = it
             )
         }

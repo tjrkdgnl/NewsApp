@@ -3,7 +3,7 @@ ext {
     versions = [
             "compileSdk"                        : 32,
             "targetSdk"                         : 31,
-            "minSdk"                            : 21,
+            "minSdk"                            : 26,
             "versionName"                       : "1.0.0",
             "versionCode"                       : 1,
             "retrofit"                          : "2.9.0",
@@ -25,7 +25,11 @@ ext {
             "ktxVersion"                        : "2.4.0",
             "activityKtx"                       : "1.5.1",
             "fragmentKtx"                       : "1.5.2",
-            "timber"                            : "5.0.1"
+            "timber"                            : "5.0.1",
+            "navigation"                        : "2.5.1",
+            "paging3"                           : "3.1.1",
+            "glide"                             : "4.13.2",
+            "room"                              : "2.4.3"
     ]
 
     deps = [
@@ -68,6 +72,23 @@ ext {
             ],
             "jsonSerialization"                     : [
                     "core"                          : "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.jsonSerialization}"
+            ],
+            "navigation"                            : [
+                    "fragment"                      : "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                    "ui"                            : "androidx.navigation:navigation-ui-ktx:${versions.navigation}",
+                    "runtime"                       : "androidx.navigation:navigation-runtime:${versions.navigation}"
+            ],
+            "paging3"                               : [
+                    "core"                          : "androidx.paging:paging-runtime:${versions.paging3}"
+            ],
+            "glide"                                 : [
+                    "core"                          : "com.github.bumptech.glide:glide:${versions.glide}",
+                    "compiler"                      : "com.github.bumptech.glide:compiler:${versions.glide}"
+            ],
+            "room"                                  : [
+                    "core"                          : "androidx.room:room-runtime:${versions.room}",
+                    "compiler"                      : "androidx.room:room-compiler:${versions.room}",
+                    "ktx"                           : "androidx.room:room-ktx:${versions.room}"
             ]
     ]
 
@@ -103,6 +124,12 @@ ext {
             deps.retrofit.loggingInterceptor,
             deps.retrofit.coroutinesConverter,
             deps.retrofit.serialization,
+    ]
+
+    framentNavigation =[
+            deps.navigation.fragment,
+            deps.navigation.ui,
+            deps.navigation.runtime
     ]
 
 }
