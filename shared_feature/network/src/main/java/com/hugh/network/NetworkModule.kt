@@ -63,7 +63,7 @@ object NetworkModule {
             val req = chain.request()
 
             val newReq = req.newBuilder()
-                .addHeader("x-api-key", BuildConfig.API_KEY)
+                .addHeader("x-api-key", "850f133a4d8a46e2b9aea837f0580578")
                 .build()
 
             chain.proceed(newReq)
