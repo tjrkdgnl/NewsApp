@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">wantedPreOnboarding</string>
+    <string name="app_name">NewsApp</string>
     <string name="search">검색하기</string>
     <string name="topNews">탑뉴스</string>
     <string name="category">카테고리</string>
